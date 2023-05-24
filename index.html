@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divini</title>
+
+    <!-- LIBRERIAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0" />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./multimedia/favicon.ico">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="./Styles/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="contenedor1Nav">
+            <img class="logo" src="./multimedia/divini1.png" alt="Logo Divini">
+        </div>
+        <div class="navegador">
+            <div class="menu-hamburguer">
+                <img src="./assets/menu.svg" alt="menu" class="menu-img">
+            </div>
+            <div class="search" id="container_search">
+                <label class="labe-search" for="buscador"><span class="material-symbols-outlined">
+                        search
+                    </span></label>
+                <input class="item_search" type="text" placeholder="Search" id="buscador">
+            </div>
+            <!-- NAVEGADOR -->
+            <div class="menu">
+                <div class="menu-container">
+                    <ul class="menu-links">
+                        <li class="menu-item"><a href="#" id="home" class="menu-link">Home</a></li>
+
+                        <li class="menu-item menu-item-show"><a href="#" id="about" class="menu-link">About <img
+                                    src="./assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
+                            <ul class="menu-dropdown">
+                                <li><a class="menu-link dropdown-item" href="#">Nuestra Historia</a></li>
+                                <li><a class="menu-link dropdown-item" href="#">Bodegas</a></li>
+                                <li><a class="menu-link dropdown-item" href="#">Blog</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item menu-item-show"><a href="#" id="shop" class="menu-link">Shop <img
+                                    src="./assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
+                            <ul class="menu-dropdown">
+                                <li><a class="menu-link dropdown-item" href="#">Vinos tintos</a></li>
+                                <li><a class="menu-link dropdown-item" href="#">Vinos blancos</a></li>
+                                <li><a class="menu-link dropdown-item" href="#">Chardonnays</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item"><a href="#" id="contacto" class="menu-link">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="carrito">
+                <span class="material-symbols-outlined">
+                    local_mall
+                </span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="inicio">
+            <div class="video-container">
+                <video src="./multimedia/Indexvideo.mp4" autoplay loop poster="./multimedia/Imagenposter.jpg"></video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="inicio-content">
+                <h1> BIENVENIDOS </h1>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="./JS/main.js"> </script>
+</body>
+
+</html>
