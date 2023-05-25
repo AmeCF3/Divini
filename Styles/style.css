@@ -126,6 +126,7 @@
     align-items: center;
 }
 
+/* FLECHA EN EL MENU */
 .menu-arrow {
     transform: var(--transform);
     transition: transform 0.3s;
@@ -133,6 +134,7 @@
     margin-left: 3px;
 }
 
+/* CARACTERISTICAS DEL MENU DESPLEGABLE */
 .menu-dropdown {
     transition: clip-path 0.3s;
     clip-path: var(--clip);
@@ -144,6 +146,8 @@
     background-color: #f3f3f3;
 }
 
+/* BOTONES QUE SE DESPLIEGAN EN EL NAVBAR */
+
 .dropdown-item {
     padding: 20px 100px 20px 20px;
 }
@@ -152,10 +156,10 @@
     background-color:#5e7094;
 }
 
-/* CARRITO */
+/* BOLSA DE COMPRAS */
 
-/* Contenedor del carrito */
-.carrito {
+/* Contenedor de la bolsa de compras*/
+.shopping-bag {
     width: 15%;
     height: 100%;
     display: flex;
@@ -164,13 +168,30 @@
     align-items: center;
 }
 
-/* Logo del carrito */
-.carrito .material-symbols-outlined {
+/* CARACTERISTICAS en el logo de la bolsa de compras */
+.shopping-bag .material-symbols-outlined {
     color: #b9921d;
     font-size: 2rem;
     cursor: pointer;
 }
 
+/* EFECTO EN BOLSA DE COMPRAS */
+.hvr-grow1 {
+    vertical-align: middle;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow1:hover,
+.hvr-grow1:focus,
+.hvr-grow1:active {
+    transform: scale(1.1);
+}
+
+/* MENU DE HAMBURGUESA */
 .menu-hamburguer {
     height: 100%;
     display: flex;
@@ -193,7 +214,7 @@
     height: 100%;
 }
 
-
+/* VIDEO */
 video {
     position: absolute;
     min-width: 100%;
@@ -203,6 +224,8 @@ video {
     z-index: -4;
     display: block;
 }
+
+/* CAPA DE OPACIDAD SOBRE EL VIDEO */
 
 .video-overlay {
     width: 100%;
@@ -214,9 +237,11 @@ video {
     display: block;
 }
 
+
+/* CONTENEDOR DEL TEXTO DE BIENVENIDOS */
 .inicio-content {
     width: 100%;
-    height: 80vh;
+    height: 77vh;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -225,6 +250,7 @@ video {
     z-index: -2;
 }
 
+/* ESTILO DEL TEXTO DE BIENVENIDOS */
 .inicio-content h1 {
     font-family: 'Tsukimi Rounded', sans-serif;
     /* font-family: 'Poppins', sans-serif; */
@@ -234,7 +260,7 @@ video {
 
 
 
-
+/* RESPONSIVE */
 
 @media (max-width: 800px) {
     .menu-hamburguer {
@@ -276,7 +302,6 @@ video {
     .menu-links-show {
         transform: unset;
         width: 100%;
-
     }
 
     .menu-link {
@@ -297,7 +322,6 @@ video {
         transform: translateY(0);
         height: 0;
         transition: height 0.3s;
-
     }
 
     .dropdown-item {
