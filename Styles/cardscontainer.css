@@ -1,8 +1,8 @@
 /* CONTENEDOR DE TEXTO NUESTROS VINOS */
 
 .container-name {
-    width: 100vw;
-    height: 20vh;
+    width: 100%;
+    height: 25vh;
     background-color: #f3f3f3;
     display: flex;
     align-items: flex-end;
