@@ -23,9 +23,6 @@ function imprimir(id) {
             form.innerHTML = ""
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
-
-
-
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=about");
 
             break;
@@ -34,9 +31,6 @@ function imprimir(id) {
             form.innerHTML = ""
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
-
-
-
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
 
             break;
@@ -45,7 +39,6 @@ function imprimir(id) {
             form.innerHTML = ""
             vinosContainer.style.display = "none";
             printCellers();
-
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=bodegas");
 
             break;
@@ -53,16 +46,12 @@ function imprimir(id) {
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop");
-
             break;
         case "red-wine":
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-
-
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-rojos");
 
             break;
@@ -70,8 +59,6 @@ function imprimir(id) {
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-
-
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
 
             break;
@@ -79,8 +66,6 @@ function imprimir(id) {
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-
-
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/chardonnay");
 
             break;
@@ -90,8 +75,6 @@ function imprimir(id) {
             printForm();
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
-
-
             break;
         default:
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=home");
@@ -99,8 +82,6 @@ function imprimir(id) {
             bodegas.innerHTML = ""
             vinosContainer.style.display = "block";
             video.style.display = "block"
-
-
     }
 }
 
