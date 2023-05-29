@@ -144,6 +144,7 @@
     width: max-content;
     transform: translateY(100%);
     background-color: #f3f3f3;
+    z-index: 2;
 }
 
 /* BOTONES QUE SE DESPLIEGAN EN EL NAVBAR */
@@ -253,7 +254,6 @@ video {
 /* ESTILO DEL TEXTO DE BIENVENIDOS */
 .inicio-content h1 {
     font-family: 'Tsukimi Rounded', sans-serif;
-    /* font-family: 'Poppins', sans-serif; */
     color: #f3f3f3;
     font-size: 5.5vw;
 }

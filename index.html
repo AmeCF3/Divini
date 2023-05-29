@@ -15,13 +15,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tsukimi+Rounded:wght@300;400;500&display=swap"
         rel="stylesheet">
-    
-        <!-- FAVICON -->
+
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="./multimedia/favicon.ico">
 
     <!-- ESTILOS -->
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="./Styles/cardscontainer.css">
+    <link rel="stylesheet" href="./Styles/contact.css">
+    <link rel="stylesheet" href="./Styles/bodegas.css">
 </head>
 
 <body>
@@ -33,6 +35,7 @@
             <div class="menu-hamburguer">
                 <img src="./assets/menu.svg" alt="menu" class="menu-img">
             </div>
+            <!-- BUSCAROR -->
             <div class="search" id="container_search">
                 <label class="labe-search" for="buscador"><span class="material-symbols-outlined">
                         search
@@ -43,28 +46,36 @@
             <div class="menu">
                 <div class="menu-container">
                     <ul class="menu-links">
-                        <li class="menu-item"><a href="#" id="home" class="menu-link">Home</a></li>
+                        <li class="menu-item link_nav"><a href="#" id="home" class="menu-link navlink">Home</a></li>
 
-                        <li class="menu-item menu-item-show"><a href="#" id="about" class="menu-link">About <img
-                                    src="./assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
+                        <li class="menu-item menu-item-show link_nav"><a href="#" id="about"
+                                class="menu-link navlink">About<img src="./assets/arrow.svg" alt="arrow"
+                                    class="menu-arrow"></a>
                             <ul class="menu-dropdown">
-                                <li><a class="menu-link dropdown-item" href="#">Nuestra Historia</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Bodegas</a></li>
-                                <li><a class="menu-link dropdown-item" href="https://www.aprenderdevino.es/"
+                                <li class="link_nav"><a id="our_history" class="menu-link dropdown-item navlink"
+                                        href="#">Nuestra Historia</a></li>
+                                <li class="link_nav"><a id="cellars" class="menu-link dropdown-item navlink"
+                                        href="#">Bodegas</a></li>
+                                <li><a class="menu-link dropdown-item navlink" href="https://www.aprenderdevino.es/"
                                         target="_blank">Aprende de Vinos</a></li>
                             </ul>
                         </li>
 
-                        <li class="menu-item menu-item-show"><a href="#" id="shop" class="menu-link">Shop <img
-                                    src="./assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
+                        <li class="menu-item menu-item-show link_nav"><a href="#" id="shop"
+                                class="menu-link navlink">Shop <img src="./assets/arrow.svg" alt="arrow"
+                                    class="menu-arrow"></a>
                             <ul class="menu-dropdown">
-                                <li><a class="menu-link dropdown-item" href="#">Vinos tintos</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Vinos blancos</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Chardonnays</a></li>
+                                <li class="link_nav"><a id="red-wine" class="menu-link dropdown-item navlink"
+                                        href="#">Vinos tintos</a></li>
+                                <li class="link_nav"><a id="white-wine" class="menu-link dropdown-item navlink"
+                                        href="#">Vinos blancos</a></li>
+                                <li class="link_nav"><a id="chardonnay" class="menu-link dropdown-item navlink"
+                                        href="#">Chardonnays</a></li>
                             </ul>
                         </li>
 
-                        <li class="menu-item"><a href="#" id="contacto" class="menu-link">Contacto</a></li>
+                        <li class="menu-item link_nav"><a href="#" id="contact" class="menu-link navlink">Contacto</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +87,8 @@
         </div>
     </nav>
     <main>
-        <div class="inicio">
+        <!-- CONTENERDOR DEL VIDEO -->
+        <div id="video" class="inicio">
             <div class="video-container">
                 <video src="./multimedia/Indexvideo.mp4" autoplay loop poster="./multimedia/Imagenposter.jpg"></video>
                 <div class="video-overlay"></div>
@@ -85,7 +97,8 @@
                 <h1>Bienvenidos</h1>
             </div>
         </div>
-        <div class="vinos-container">
+
+        <div id="vinos-container" class="vinos-container">
             <div class="container-name">
                 <h1> Nuestros vinos</h1>
             </div>
@@ -151,8 +164,14 @@
                 </div>
             </div>
         </div>
-    </main>
+        <!-- CONTENEDOR DEL FORUMLARIO -->
+        <div id="form"></div>
 
+        <!-- CONTENEDOR BODEGAS -->
+        <div id="info-cellers" class="vinos-container"></div>
+
+    </main>
+    <script src="./JS/index.js"></script>
     <script src="./JS/main.js"> </script>
 </body>
 
