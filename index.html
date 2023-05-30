@@ -15,8 +15,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tsukimi+Rounded:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="./multimedia/favicon.ico">
@@ -28,6 +26,8 @@
     <!-- ESTILOS -->
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="./Styles/cardscontainer.css">
+    <link rel="stylesheet" href="./Styles/contact.css">
+    <link rel="stylesheet" href="./Styles/bodegas.css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
             <div class="menu-hamburguer">
                 <img src="./assets/menu.svg" alt="menu" class="menu-img">
             </div>
-            <!-- Search -->
+            <!-- BUSCAROR -->
             <div class="search" id="container_search">
                 <label class="labe-search" for="buscador"><span class="material-symbols-outlined">
                         search
@@ -50,29 +50,33 @@
             <div class="menu">
                 <div class="menu-container">
                     <ul class="menu-links">
-                        <li class="menu-item"><a href="#" id="home" class="menu-link">Home</a></li>
+                        <li class="menu-item link_nav"><a href="#" id="home" class="menu-link navlink">Home</a></li>
 
-                        <li class="menu-item menu-item-show"><a href="#" id="about" class="menu-link">About <img
-                                    src="./assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
+                        <li class="menu-item menu-item-show link_nav"><a href="#" id="about"
+                                class="menu-link navlink">About<img src="./assets/arrow.svg" alt="arrow"
+                                    class="menu-arrow"></a>
                             <ul class="menu-dropdown">
                                 <li><a class="menu-link dropdown-item" href="#">Nuestra Historia</a></li>
-                                <li><a class="menu-link dropdown-item" href="pages/bodegas.html">Bodegas</a></li>
+                                <li><a class="menu-link dropdown-item" href="#">Bodegas</a></li>
                                 <li><a class="menu-link dropdown-item" href="https://www.aprenderdevino.es/"
                                         target="_blank">Aprende de Vinos</a></li>
                             </ul>
                         </li>
 
-                        <li class="menu-item menu-item-show"><a href="#" id="shop" class="menu-link">Shop <img
-                                    src="./assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
+                        <li class="menu-item menu-item-show link_nav"><a href="#" id="shop"
+                                class="menu-link navlink">Shop <img src="./assets/arrow.svg" alt="arrow"
+                                    class="menu-arrow"></a>
                             <ul class="menu-dropdown">
-                                <li><a class="menu-link dropdown-item" href="#">Vinos tintos</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Vinos blancos</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Chardonnays</a></li>
+                                <li class="link_nav"><a id="red-wine" class="menu-link dropdown-item navlink"
+                                        href="#">Vinos tintos</a></li>
+                                <li class="link_nav"><a id="white-wine" class="menu-link dropdown-item navlink"
+                                        href="#">Vinos blancos</a></li>
+                                <li class="link_nav"><a id="chardonnay" class="menu-link dropdown-item navlink"
+                                        href="#">Chardonnays</a></li>
                             </ul>
                         </li>
 
-                        <li class="menu-item"><a href="pages/contacto.html" id="contacto" class="menu-link">Contacto</a>
-                        </li>
+                        <li class="menu-item"><a href="#" id="contacto" class="menu-link">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -84,7 +88,8 @@
         </div>
     </nav>
     <main>
-        <div class="inicio">
+        <!-- CONTENERDOR DEL VIDEO -->
+        <div id="video" class="inicio">
             <div class="video-container">
                 <video src="./multimedia/Indexvideo.mp4" autoplay loop poster="./multimedia/Imagenposter.jpg"></video>
                 <div class="video-overlay"></div>
@@ -93,7 +98,8 @@
                 <h1>Bienvenidos</h1>
             </div>
         </div>
-        <div class="vinos-container">
+
+        <div id="vinos-container" class="vinos-container">
             <div class="container-name">
                 <h1> Nuestros vinos</h1>
             </div>
@@ -159,68 +165,16 @@
                 </div>
             </div>
         </div>
-
-
-        <!--CONTENEDOR DEL FORM -->
+        <!-- CONTENEDOR DEL FORUMLARIO -->
         <div id="form"></div>
 
+        <!-- CONTENEDOR BODEGAS -->
+        <div id="info-cellers" class="vinos-container"></div>
+
+
+        
 
     </main>
-
-    <footer class="bg-light text-dark pt-5 pb-4">
-        <div class="container text-center text-md-start">
-            <div class="row text-center text-md-start">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> 25 AÑOS</h5>
-                    <hr class="mb-4">
-                    <p class="text-color">
-                        Llenemos nuestras copas de orgullo, compromiso y pasión, y celebremos nuestros primeros 25 años.
-                        Sigamos innovando, transformando el mundo y ofreciendo los mejores vinos argentinos.
-                        Hoy brindamos por vos, por nosotros y por todos ellos.
-                    </p>
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> Novedades</h5>
-
-                    <hr class="mb-4">
-                    <p>
-                        <a href="#" class="text-color">Anuncios</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-color">Premios</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-color">Nuevas Sedes</a>
-                    </p>
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> SIGUENOS</h5>
-                    <hr class="mb-4">
-                    <p class="text-lowercase">
-                        <a href="#"> <i class="fa-brands fa-instagram  icono-footer text-color"> Instagram</i></a>
-                    </p>
-                    <p class="text-lowercase">
-                        <a href="#"> <i class="fa-brands fa-facebook  icono-footer text-color"> Facebook</i></a>
-                    <p class="text-lowercase">
-                        <a href="#"> <i class="fa-brands fa-twitter icono-footer text-color">Twitter</i></a>
-                    </p>
-                </div>
-                <hr class="mb-4">
-
-                <div class="text-center mb-2">
-                    <p class="text-color">
-                        Beber con moderacion. Prohibida su venta a menores de 18 años.
-                    </p>
-                    <h6> Copyright Todos los derechos reservados</h6>
-                    <a href="#"></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCRIPTS PARA ENLAZAR CON FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script>
@@ -230,7 +184,10 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore()
     </script>
+    
     <script src="./JS/main.js"> </script>
+
+    
 </body>
 
 </html>

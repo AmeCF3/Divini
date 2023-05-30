@@ -1,20 +1,14 @@
-
-
-body {
-    background: #eeeff1;
-    color: #fff;
-    line-height: 1.6;
-    font-family: 'Quicksand', sans-serif;
+.contenedor-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
 }
-
-.contenedor-padre{
-
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 50px;
-
-    
+.contenedor-hijo{
+    height: 80%;
+    width: 90%;
 }
 
 ul {
@@ -22,25 +16,9 @@ ul {
     padding: 0;
 }
 
-.logo {
-    text-align: center;
-    font-size: 3em;
-}
-
-.logo span {
-    color: #B70E21;
-}
-
-.contact-wrapper {
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
-}
-
-.contact-wrapper>* {
-    padding: 1em;
-}
 
 .contact-form {
-    background: #6b6d70;
+    background: #6b6d708c;
 }
 
 .contact-form form {
@@ -102,7 +80,7 @@ ul {
 
 /* LARGE SIZE */
 @media(min-width: 700px) {
-    
+
     .contact-wrapper {
         display: grid;
         grid-template-columns: 2fr 1fr;

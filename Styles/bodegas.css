@@ -1,19 +1,15 @@
-body{
-    background-color: #f3f3f3
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    grid-gap: 20px;
+    padding: 50px;
+    justify-content: center;
 }
 
-.container{
-  display: grid;
-  grid-template-columns: repeat(1, 2fr);
-  grid-gap: 20px;
-  padding: 50px;
-  justify-content: center;
-}
-
-.card1{
+.card1 {
     width: 680px;
     position: relative;
-    height:360px;
+    height: 360px;
     display: flex;
     overflow: hidden;
     flex-direction: row;
