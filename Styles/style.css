@@ -11,7 +11,7 @@
 .contenedor1Nav {
     width: 100%;
     height: 70px;
-    border-bottom: 3px solid #b9921d;
+    border-bottom: 1px solid #b9921d;
     background-color: #f3f3f3;
     display: flex;
     flex-direction: row;
@@ -23,6 +23,21 @@
 .logo {
     width: 5rem;
     height: 4rem;
+}
+
+#container-dcto{
+    width: 100%;
+    background-color:#f3f3f3;
+    border-bottom: 3px solid #b9921d;
+    color:#5e7094 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-dcto p{
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* CONTENEDOR GENERAL DEL NAVEGADOR */
@@ -176,7 +191,7 @@
 }
 
 /* EFECTO EN BOLSA DE COMPRAS */
-.hvr-grow1 {
+.hvr-grow2 {
     vertical-align: middle;
     transform: translateZ(0);
     backface-visibility: hidden;
@@ -185,9 +200,9 @@
     transition-property: transform;
 }
 
-.hvr-grow1:hover,
-.hvr-grow1:focus,
-.hvr-grow1:active {
+.hvr-grow2:hover,
+.hvr-grow2:focus,
+.hvr-grow2:active {
     transform: scale(1.1);
 }
 

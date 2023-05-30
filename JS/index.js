@@ -182,7 +182,7 @@ function printForm() {
                     <textarea name="Mensaje" rows="3"></textarea>
                 </p>
                 <p class="block">
-                    <button> ENVIAR </button>
+                <input type="submit" id="buttonForm" class="item_button_contact" value="Contactar">
                 </p>
             </form>
             </div>
@@ -197,143 +197,159 @@ function printForm() {
         </div>
     </div>
     `
+    let form = document.querySelector("form")
+    form.addEventListener("submit", function (event) { actionForm(event) })
 }
 
 function printCellers() {
-    bodegas.innerHTML =
-        `<div class="container-name1">
-                <h1>Nuestras Bodegas</h1>
-            </div>
+    bodegas.innerHTML = `
+        <div class="container-name1">
+            <h1>Nuestras Bodegas</h1>
+        </div>
 
-            <div class="container">
-                <!-- ZUCARDI -->
-                <div class="card1">
-                    <div class="card-container-before">
-                        <h1 class="title_card">Zuccardi</h1>
-                        <div class="black-card"></div>
-                        <img src="./multimedia/Familia-Zuccardi.jpg" alt="" class="card_img">
-                    </div>
-                    <div class="card-container-after">
-                        <div class="info-container">
-                            <h1 class="title-card-after">Tour por nuestra bodega Zucardi</h1>
-                            <p class="paragraph-card-after">Se encuentra en Paraje Altamira, San Carlos, Mendoza. Desde
-                                2008 la bodega cuenta con un área de Investigación y Desarrollo. El objetivo es “no
-                                buscar vinos perfectos, sino aquellos que expresen el lugar, la región”
-                            </p>
-                            <ul class="info-card-after">
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Duración:</span> 1 hora
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Idiomas:</span> Español, Inglés y Portugués
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Dias:</span> Lunes a Domingo, horario según la
-                                        disponibilidad.
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Valor:</span> 50.000
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="reserve-button">Reservar Tour</button>
-                    </div>
+        <div class="container">
+            <!-- ZUCARDI -->
+            <div class="card1">
+                <div class="card-container-before">
+                    <h1 class="title_card">Zuccardi</h1>
+                    <div class="black-card"></div>
+                    <img src="./multimedia/Familia-Zuccardi.jpg" alt="" class="card_img">
                 </div>
-
-                <!-- BODEGA TRAPICHE -->
-                <div class="card1">
-                    <div class="card-container-before">
-                        <h1 class="title_card">Bodega Trapiche</h1>
-                        <div class="black-card"></div>
-                        <img src="./multimedia/Trapiche.jpg" alt="" class="card_img">
+                <div class="card-container-after">
+                    <div class="info-container">
+                        <h1 class="title-card-after">Tour por nuestra bodega Zucardi</h1>
+                        <p class="paragraph-card-after">Se encuentra en Paraje Altamira, San Carlos, Mendoza. Desde
+                            2008 la bodega cuenta con un área de Investigación y Desarrollo. El objetivo es “no
+                            buscar vinos perfectos, sino aquellos que expresen el lugar, la región”
+                        </p>
+                        <ul class="info-card-after">
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Duración:</span> 1 hora
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Idiomas:</span> Español, Inglés y Portugués
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Días:</span> Lunes a Domingo, horario según la
+                                    disponibilidad.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Valor:</span> 50.000
+                                </p>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="card-container-after">
-                        <div class="info-container">
-                            <h1 class="title-card-after">Tour por nuestra bodega Trapiche</h1>
-                            <p class="paragraph-card-after">Ubicada en Maipú, Mendoza. La bodega fue pionera en la
-                                introducción de cepas francesas, la importación de barricas de roble francés y la
-                                introducción de vinos provenientes de un micro-terroir.
-                            </p>
-                            <ul class="info-card-after">
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Duración:</span> 2 horas
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Idiomas:</span> Español, Inglés y Portugués
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Dias:</span> Lunes a Domingo, horario según la
-                                        disponibilidad.
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Valor:</span>75.000
-                                        incluido.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="reserve-button">Reservar Tour</button>
-                    </div>
-                </div>
-
-                <!-- CASA TRIVENTO -->
-                <div class="card1">
-                    <div class="card-container-before">
-                        <h1 class="title_card">Bodega Trivento</h1>
-                        <div class="black-card"></div>
-                        <img src="./multimedia/trivento.jpg" alt="" class="card_img">
-                    </div>
-                    <div class="card-container-after">
-                        <div class="info-container">
-                            <h1 class="title-card-after">Tour por nuestra bodega Trivento</h1>
-                            <p class="paragraph-card-after">Ubicada en el paraje de Chachingo de Maipú, inspirada en el
-                                mágico mundo de la Divina Comedia de Dante Alighieri. Una bodega
-                                que invita a experimentar el encanto del vino, la gastronomía y la literatura fusionados
-                                en una propuesta enoturística única.
-                            </p>
-                            <ul class="info-card-after">
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Duración:</span> 1 hora
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Idiomas:</span> Español, Inglés y Portugués
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Dias:</span> Lunes a Domingo, horario según la
-                                        disponibilidad.
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="paragraph-info-card-after">
-                                        <span class="title-info-card">Valor:</span> 65.000
-                                        incluido.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="reserve-button">Reservar Tour</button>
-                    </div>
+                    <input type="button" class="reserve-button" value="Reservar Tour">
                 </div>
             </div>
-`
+
+            <!-- BODEGA TRAPICHE -->
+            <div class="card1">
+                <div class="card-container-before">
+                    <h1 class="title_card">Bodega Trapiche</h1>
+                    <div class="black-card"></div>
+                    <img src="./multimedia/Trapiche.jpg" alt="" class="card_img">
+                </div>
+                <div class="card-container-after">
+                    <div class="info-container">
+                        <h1 class="title-card-after">Tour por nuestra bodega Trapiche</h1>
+                        <p class="paragraph-card-after">Ubicada en Maipú, Mendoza. La bodega fue pionera en la
+                            introducción de cepas francesas, la importación de barricas de roble francés y la
+                            introducción de vinos provenientes de un micro-terroir.
+                        </p>
+                        <ul class="info-card-after">
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Duración:</span> 2 horas
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Idiomas:</span> Español, Inglés y Portugués
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Días:</span> Lunes a Domingo, horario según la
+                                    disponibilidad.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Valor:</span> 75.000 incluido.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="button" class="reserve-button" value="Reservar Tour">
+                </div>
+            </div>
+
+            <!-- CASA TRIVENTO -->
+            <div class="card1">
+                <div class="card-container-before">
+                    <h1 class="title_card">Bodega Trivento</h1>
+                    <div class="black-card"></div>
+                    <img src="./multimedia/trivento.jpg" alt="" class="card_img">
+                </div>
+                <div class="card-container-after">
+                    <div class="info-container">
+                        <h1 class="title-card-after">Tour por nuestra bodega Trivento</h1>
+                        <p class="paragraph-card-after">Ubicada en el paraje de Chachingo de Maipú, inspirada en el
+                            mágico mundo de la Divina Comedia de Dante Alighieri. Una bodega
+                            que invita a experimentar el encanto del vino, la gastronomía y la literatura fusionados
+                            en una propuesta enoturística única.
+                        </p>
+                        <ul class="info-card-after">
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Duración:</span> 1 hora
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Idiomas:</span> Español, Inglés y Portugués
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Días:</span> Lunes a Domingo, horario según la
+                                    disponibilidad.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraph-info-card-after">
+                                    <span class="title-info-card">Valor:</span> 65.000 incluido.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="button" class="reserve-button" value="Reservar Tour">
+                </div>
+            </div>
+        </div>
+    `;
+
+    let reserveButtons = document.querySelectorAll(".reserve-button");
+    reserveButtons.forEach(function (button) {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            actionCellers(event);
+        });
+    });
 }
+
+function actionCellers(event) {
+    swal({
+      title: "Gracias por tu reserva, a la brevedad te contactaremos.",
+      icon: "success",
+      button: "Continuar",
+    });
+  }
