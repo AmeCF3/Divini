@@ -1,27 +1,31 @@
 var selectNav = document.querySelectorAll(".link_nav");
 let video = document.getElementById("video")
-let form = document.getElementById("form")
+var form = document.getElementById("form")
 let bodegas = document.getElementById("info-cellers")
 let vinosContainer = document.getElementById("vinos-container")
 let allWines = document.getElementById("allWines")
 let cardsShop = document.getElementsByClassName("card-container-general1")
 
 var buttonNav = [];
-let dataVinos = []
+let dataVinos = [];
 
 // LLAMADO A LA API
 const coleccionVinos = firebase.firestore().collection("BBDD");
 
 coleccionVinos.get()
     .then((results) => {
-        console.log(results)
-        const data = results.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-        }));
-        dataVinos.push(...data)
-        console.log("Toda data en la coleccion 'BBDD' ", data);
+        const data = results.docs
+            .filter((doc) => doc.data().Category === "vinos")
+            .map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+        dataVinos.push(...data);
+    })
+    .catch((error) => {
+        console.error("Error al obtener los datos:", error);
     });
+
 console.log(dataVinos)
 
 
@@ -106,13 +110,12 @@ function imprimir(id) {
         case "contact":
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=contact");
             video.style.display = "none";
-            printForm();
             bodegas.innerHTML = ""
             allWines.innerHTML = ""
             allWines.style.display = "none"
-
-
             vinosContainer.style.display = "none";
+            printForm();
+
             break;
         default:
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=home");
@@ -141,7 +144,7 @@ function print(vinosArray) {
                 <h4>${dataVinos.Name}</h4>
             </div>
             <div class="container_details1">
-                <p>${dataVinos.Price}</p>
+                <p>$${dataVinos.Price}</p>
                 <a class="button_index1" href="/Pages/Details.html?id=${dataVinos.id}">Detalle</a>
             </div>
         </div>
@@ -157,49 +160,81 @@ function print(vinosArray) {
 }
 
 
-
-// FUNCION IMPRIMIR FORMULARIO
+// FUNCIÓN IMPRIMIR FORMULARIO
 function printForm() {
-    form.innerHTML =
-        `<div class="contenedor-form">
-        <div class="contact-wrapper animated bounceInUp contenedor-hijo">
-         <div class="contact-form">
-            <form action="">
-                <p>
-                    <label>Nombre y Apellido</label>
-                    <input type="text" name="Nombre y Apellido">
-                </p>
-                <p>
-                    <label>Email</label>
-                    <input type="email" name="Email">
-                </p>
-                <p>
-                    <label>Numero de telefono</label>
-                    <input type="tel" name="Numero de telefono">
-                </p>
-                <p class="block">
-                    <label>Mensaje</label>
-                    <textarea name="Mensaje" rows="3"></textarea>
-                </p>
-                <p class="block">
-                <input type="submit" id="buttonForm" class="item_button_contact" value="Contactar">
-                </p>
-            </form>
-            </div>
-            <div class="contact-info">
-            <h4>Mas Info:</h4>
-            <ul>
-                <li class=> Ubicación : MENDOZA</li>
-            </ul>
-            <p>Contamos con bodegas ganadora de premios internacionales</p>
-            <p>Argentina</p>
+    form.innerHTML = `
+        <div class="contenedor-form">
+            <div class="contact-wrapper animated bounceInUp contenedor-hijo">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <p>
+                            <label>Nombre y Apellido</label>
+                            <input type="text" name="nombreApellido">
+                        </p>
+                        <p>
+                            <label>Email</label>
+                            <input type="email" name="email">
+                        </p>
+                        <p>
+                            <label>Número de teléfono</label>
+                            <input type="tel" name="telefono">
+                        </p>
+                        <p class="block">
+                            <label>Mensaje</label>
+                            <textarea name="mensaje" rows="3"></textarea>
+                        </p>
+                        <p class="block">
+                            <input type="submit" id="buttonForm" class="button_contact" value="ENVIAR">
+                        </p>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h4>Más Info:</h4>
+                    <ul>
+                        <li>Ubicación: Mendoza</li>
+                    </ul>
+                    <p>Contamos con bodegas ganadoras de premios internacionales</p>
+                    <p>Argentina</p>
+                </div>
             </div>
         </div>
-    </div>
-    `
-    let form = document.querySelector("form")
-    form.addEventListener("submit", function (event) { actionForm(event) })
+    `;
+
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        actionForm(event);
+    });
 }
+
+// SWAL ALRET FORMULARIO DE CONTACTO
+
+function actionForm(event) {
+    event.preventDefault();
+
+    const formData = {
+        nombre: event.target.elements["nombreApellido"].value,
+        correo: event.target.elements["email"].value,
+        telefono: event.target.elements["telefono"].value,
+        mensaje: event.target.elements["mensaje"].value,
+    };
+
+    console.log(formData);
+
+    // Vaciar los campos del formulario
+    event.target.elements["nombreApellido"].value = "";
+    event.target.elements["email"].value = "";
+    event.target.elements["telefono"].value = "";
+    event.target.elements["mensaje"].value = "";
+
+    swal({
+        title: `Gracias ${formData.nombre} por dejarnos tu comentario. A la brevedad nos contactaremos.`,
+        icon: "success",
+        button: "Continuar",
+    });
+}
+
+// FUNCIÓN IMPRIMIR DATOS BODEGAS
 
 function printCellers() {
     bodegas.innerHTML = `
@@ -348,8 +383,8 @@ function printCellers() {
 
 function actionCellers(event) {
     swal({
-      title: "Gracias por tu reserva, a la brevedad te contactaremos.",
-      icon: "success",
-      button: "Continuar",
+        title: "Gracias por tu reserva, a la brevedad te contactaremos.",
+        icon: "success",
+        button: "Continuar",
     });
-  }
+}
