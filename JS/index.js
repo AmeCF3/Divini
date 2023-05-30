@@ -1,97 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
+var selectNav = document.querySelectorAll(".link_nav");
+let video = document.getElementById("video")
+let form = document.getElementById("form")
+let bodegas = document.getElementById("info-cellers")
+let vinosContainer = document.getElementById("vinos-container")
+var buttonNav = [];
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodegas</title>
+for (var i = 0; i < selectNav.length; i++) {
+    const element = selectNav[i];
+    buttonNav.push(selectNav[i].innerText);
+    element.addEventListener("click", function (e) {
+        imprimir(e.target.id);
+    });
+}
 
-    <!-- LIBRERIAS -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tsukimi+Rounded:wght@300;400;500&display=swap"
-        rel="stylesheet">
+console.log(imprimir)
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../multimedia/favicon.ico">
+//FUNCIÓN PARA CAMBIAR DE PÁGINA
+function imprimir(id) {
+    switch (id) {
+        case "about":
+            video.style.display = "none";
+            form.innerHTML = ""
+            bodegas.innerHTML = ""
+            vinosContainer.style.display = "none";
 
-    <!-- ESTILOS -->
-    <link rel="stylesheet" href="../Styles/style.css">
-    <link rel="stylesheet" href="../Styles/cardscontainer.css">
-    <link rel="stylesheet" href="../Styles/bodegas.css">
-</head>
 
-<body>
-    <nav>
-        <div class="contenedor1Nav">
-            <img class="logo" src="../multimedia/divini1.png" alt="Logo Divini">
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=about");
+
+            break;
+        case "our_history":
+            video.style.display = "none";
+            form.innerHTML = ""
+            bodegas.innerHTML = ""
+            vinosContainer.style.display = "none";
+
+
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
+
+            break;
+        case "cellars":
+            video.style.display = "none";
+            form.innerHTML = ""
+            vinosContainer.style.display = "none";
+            printCellers();
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=bodegas");
+
+            break;
+        case "shop":
+            video.style.display = "none";
+            form.innerHTML = ""
+            bodegas.innerHTML = ""
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop");
+
+            break;
+        case "red-wine":
+            video.style.display = "none";
+            form.innerHTML = ""
+            bodegas.innerHTML = ""
+
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-rojos");
+
+            break;
+        case "white-wine":
+            video.style.display = "none";
+            form.innerHTML = ""
+            bodegas.innerHTML = ""
+
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
+
+            break;
+        case "chardonnay":
+            video.style.display = "none";
+            form.innerHTML = ""
+            bodegas.innerHTML = ""
+
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/chardonnay");
+
+            break;
+        case "contact":
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=contact");
+            video.style.display = "none";
+            printForm();
+            bodegas.innerHTML = ""
+            vinosContainer.style.display = "none";
+
+
+            break;
+        default:
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=home");
+            form.innerHTML = ""
+            bodegas.innerHTML = ""
+            vinosContainer.style.display = "block";
+            video.style.display = "block"
+
+
+    }
+}
+
+
+function printForm() {
+    form.innerHTML =
+        `<div class="contenedor-form">
+        <div class="contact-wrapper animated bounceInUp contenedor-hijo">
+         <div class="contact-form">
+            <form action="">
+                <p>
+                    <label>Nombre y Apellido</label>
+                    <input type="text" name="Nombre y Apellido">
+                </p>
+                <p>
+                    <label>Email</label>
+                    <input type="email" name="Email">
+                </p>
+                <p>
+                    <label>Numero de telefono</label>
+                    <input type="tel" name="Numero de telefono">
+                </p>
+                <p class="block">
+                    <label>Mensaje</label>
+                    <textarea name="Mensaje" rows="3"></textarea>
+                </p>
+                <p class="block">
+                    <button> ENVIAR </button>
+                </p>
+            </form>
+            </div>
+            <div class="contact-info">
+            <h4>Mas Info:</h4>
+            <ul>
+                <li class=> Ubicación : MENDOZA</li>
+            </ul>
+            <p>Contamos con bodegas ganadora de premios internacionales</p>
+            <p>Argentina</p>
+            </div>
         </div>
-        <div class="navegador">
-            <div class="menu-hamburguer">
-                <img src="../assets/menu.svg" alt="menu" class="menu-img">
-            </div>
-            <div class="search" id="container_search">
-                <label class="labe-search" for="buscador"><span class="material-symbols-outlined">
-                        search
-                    </span></label>
-                <input class="item_search" type="text" placeholder="Search" id="buscador">
-            </div>
-            <!-- NAVEGADOR -->
-            <div class="menu">
-                <div class="menu-container">
-                    <ul class="menu-links">
-                        <li class="menu-item"><a href="../index.html" id="home" class="menu-link">Home</a></li>
+    </div>
+    `
+}
 
-                        <li class="menu-item menu-item-show"><a href="#" id="about" class="menu-link">About <img
-                                    src="../assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
-                            <ul class="menu-dropdown">
-                                <li><a class="menu-link dropdown-item" href="#">Nuestra Historia</a></li>
-                                <li><a class="menu-link dropdown-item" href="bodegas.html">Bodegas</a></li>
-                                <li><a class="menu-link dropdown-item" href="https://www.aprenderdevino.es/"
-                                        target="_blank">Aprende de Vinos</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="menu-item menu-item-show"><a href="#" id="shop" class="menu-link">Shop <img
-                                    src="../assets/arrow.svg" alt="arrow" class="menu-arrow"></a>
-                            <ul class="menu-dropdown">
-                                <li><a class="menu-link dropdown-item" href="#">Vinos tintos</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Vinos blancos</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Chardonnays</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="menu-item"><a href="#" id="contacto" class="menu-link">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="shopping-bag">
-                <span class=" hvr-grow1 material-symbols-outlined">
-                    local_mall
-                </span>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <!-- BODEGAS -->
-        <div class="vinos-container">
-            <div class="container-name">
+function printCellers() {
+    bodegas.innerHTML =
+        `<div class="container-name">
                 <h1>Nuestras Bodegas</h1>
             </div>
 
             <div class="container">
-
                 <!-- ZUCARDI -->
                 <div class="card1">
                     <div class="card-container-before">
                         <h1 class="title_card">Zuccardi</h1>
                         <div class="black-card"></div>
-                        <img src="../multimedia/bodegas/Familia-Zuccardi.jpg" alt="" class="card_img">
+                        <img src="./multimedia/Familia-Zuccardi.jpg" alt="" class="card_img">
                     </div>
                     <div class="card-container-after">
                         <div class="info-container">
@@ -124,18 +190,16 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="#" class="reserve-button">Reservar Tour</a>
+                        <button class="reserve-button">Reservar Tour</button>
                     </div>
                 </div>
-
-
 
                 <!-- BODEGA TRAPICHE -->
                 <div class="card1">
                     <div class="card-container-before">
                         <h1 class="title_card">Bodega Trapiche</h1>
                         <div class="black-card"></div>
-                        <img src="../multimedia/bodegas/Trapiche.jpg" alt="" class="card_img">
+                        <img src="./multimedia/Trapiche.jpg" alt="" class="card_img">
                     </div>
                     <div class="card-container-after">
                         <div class="info-container">
@@ -169,7 +233,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="#" class="reserve-button">Reservar Tour</a>
+                        <button class="reserve-button">Reservar Tour</button>
                     </div>
                 </div>
 
@@ -178,12 +242,12 @@
                     <div class="card-container-before">
                         <h1 class="title_card">Bodega Trivento</h1>
                         <div class="black-card"></div>
-                        <img src="../multimedia/bodegas/trivento.jpg" alt="" class="card_img">
+                        <img src="./multimedia/trivento.jpg" alt="" class="card_img">
                     </div>
                     <div class="card-container-after">
                         <div class="info-container">
                             <h1 class="title-card-after">Tour por nuestra bodega Trivento</h1>
-                            <p class="paragraph-card-after">Ubicada en el paraje de Chachingo de Maipú,inspirada en el
+                            <p class="paragraph-card-after">Ubicada en el paraje de Chachingo de Maipú, inspirada en el
                                 mágico mundo de la Divina Comedia de Dante Alighieri. Una bodega
                                 que invita a experimentar el encanto del vino, la gastronomía y la literatura fusionados
                                 en una propuesta enoturística única.
@@ -213,15 +277,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="#" class="reserve-button">Reservar Tour</a>
+                        <button class="reserve-button">Reservar Tour</button>
                     </div>
                 </div>
-
             </div>
-        </div>
-
-    </main>
-    <script src="../JS/main.js"></script>
-</body>
-
-</html>
+`
+}
