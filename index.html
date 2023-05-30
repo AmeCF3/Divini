@@ -16,10 +16,8 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tsukimi+Rounded:wght@300;400;500&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- FONT AWESOME  --> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="./multimedia/favicon.ico">
@@ -67,8 +65,6 @@
                                 class="menu-link navlink">About<img src="./assets/arrow.svg" alt="arrow"
                                     class="menu-arrow"></a>
                             <ul class="menu-dropdown">
-                                <li class="link_nav"><a id="our_history" class="menu-link dropdown-item navlink"
-                                        href="#history">Nuestra Historia</a></li>
                                 <li class="link_nav"><a id="cellars" class="menu-link dropdown-item navlink"
                                         href="#info-cellars">Bodegas</a></li>
                                 <li><a class="menu-link dropdown-item navlink" href="https://www.aprenderdevino.es/"
@@ -196,56 +192,43 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-light text-dark pt-5 pb-4">
-        <div class="container text-center text-md-start">
-            <div class="row text-center text-md-start">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> 25 AÑOS</h5>
-                    <hr class="mb-4">
-                    <p class="text-color">
-                        Llenemos nuestras copas de orgullo, compromiso y pasión, y celebremos nuestros primeros 25 años.
-                        Sigamos innovando, transformando el mundo y ofreciendo los mejores vinos argentinos.
-                        Hoy brindamos por vos, por nosotros y por todos ellos.
-                    </p>
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> Novedades</h5>
-
-                    <hr class="mb-4">
-                    <p>
-                        <a href="#" class="text-color">Anuncios</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-color">Premios</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-color">Nuevas Sedes</a>
-                    </p>
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> SIGUENOS</h5>
-                    <hr class="mb-4">
-                    <p class="text-lowercase">
-                        <a href="#"> <i class="fa-brands fa-instagram  icono-footer text-color">  Instagram</i></a>
-                    </p>
-                    <p class="text-lowercase">
-                        <a href="#"><i class="fa-brands fa-facebook  icono-footer text-color">  Facebook</i></a>
-                    <p class="text-lowercase">
-                        <a href="#"> <i class="fa-brands fa-twitter icono-footer text-color">  Twitter</i></a>
-                    </p>
-                </div>
-                <hr class="mb-4">
-
-                <div class="text-center mb-2">
-                    <p class="text-color">
-                        Beber con moderacion. Prohibida su venta a menores de 18 años.
-                    </p>
-                    <h6> Copyright Todos los derechos reservados</h6>
-                    <a href="#"></a>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Llenemos nuestras copas de orgullo, compromiso y pasión, y celebremos nuestros primeros 25 años.
+                    Sigamos innovando, transformando el mundo y ofreciendo los mejores vinos argentinos.
+                    Hoy brindamos por vos, por nosotros y por todos ellos.</p>
+            </div>
+            <div class="box">
+                <h2>NOVEDADES</h2>
+                <p>
+                    <a href="#" class="sin-linea">Anuncios</a>
+                </p>
+                <p>
+                    <a href="#" class="sin-linea">Premios</a>
+                </p>
+                <p>
+                    <a href="#" class="sin-linea">Nuevas Sedes</a>
+                </p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://es-la.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=es" target="_blank" class="fa fa-twitter"></a>
+                    <a href="https://www.youtube.com/?hl=ES" target="_blank" class="fa fa-youtube"></a>
                 </div>
             </div>
+        </div>
+        <hr class="linea-division">
+        <div class="grupo-2">
+            <p>
+                Beber con moderacion. Prohibida su venta a menores de 18 años.
+            </p>
+            <br>
+            <small>&copy; 2023 <b>DENA</b> - Todos los Derechos Reservados.</small>
         </div>
     </footer>
     <!-- SCRIPTS PARA ENLAZAR CON FIREBASE -->
@@ -254,13 +237,7 @@
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
-            apiKey: "AIzaSyDVCs2kGyzyHlt1i_IWLXg4KlF4w0LSV2Y",
-            authDomain: "vinoteca-divini.firebaseapp.com",
-            databaseURL: "https://vinoteca-divini-default-rtdb.firebaseio.com",
-            projectId: "vinoteca-divini",
-            storageBucket: "vinoteca-divini.appspot.com",
-            messagingSenderId: "155015784463",
-            appId: "1:155015784463:web:8c62db7696f099a4805b7a"
+        
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);

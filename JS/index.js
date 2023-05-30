@@ -47,24 +47,13 @@ function imprimir(id) {
     switch (id) {
         case "about":
             video.style.display = "none";
-            form.innerHTML = ""
-            bodegas.innerHTML = ""
-            vinosContainer.style.display = "none";
-            allWines.style.display = "none"
-            history.innerHTML = ""
-
-            window.history.replaceState(null, null, window.location.origin + "/index.html?time=about");
-
-            break;
-        case "our_history":
-            video.style.display = "none";
             form.innerHTML = "";
             bodegas.innerHTML = "";
             vinosContainer.style.display = "none";
             allWines.style.display = "none";
             printHistory();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
-            break;
+            break;          
         case "cellars":
             video.style.display = "none";
             form.innerHTML = ""
@@ -132,7 +121,7 @@ function imprimir(id) {
     }
 }
 
-
+// FUNCION PARA PINTAR LAS TARJETAS 
 function print(vinosArray) {
     if (Array.isArray(vinosArray)) {
         const vinosHTML = vinosArray.map(dataVinos =>
