@@ -22,6 +22,7 @@
     <!-- ESTILOS -->
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="./Styles/cardscontainer.css">
+    <link rel="stylesheet" href="./Styles/cardsshop.css">
     <link rel="stylesheet" href="./Styles/contact.css">
     <link rel="stylesheet" href="./Styles/bodegas.css">
 </head>
@@ -86,7 +87,9 @@
             </div>
         </div>
     </nav>
+
     <main>
+
         <!-- CONTENERDOR DEL VIDEO -->
         <div id="video" class="inicio">
             <div class="video-container">
@@ -164,6 +167,10 @@
                 </div>
             </div>
         </div>
+
+        <div id="allWines" class="card-container-general1">
+        </div>
+
         <!-- CONTENEDOR DEL FORUMLARIO -->
         <div id="form"></div>
 
@@ -171,21 +178,30 @@
         <div id="info-cellers" class="vinos-container"></div>
 
     </main>
-    <script src="./JS/index.js"></script>
-    </main>
+
     <!-- SCRIPTS PARA ENLAZAR CON FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
-
+            apiKey: "AIzaSyDVCs2kGyzyHlt1i_IWLXg4KlF4w0LSV2Y",
+            authDomain: "vinoteca-divini.firebaseapp.com",
+            databaseURL: "https://vinoteca-divini-default-rtdb.firebaseio.com",
+            projectId: "vinoteca-divini",
+            storageBucket: "vinoteca-divini.appspot.com",
+            messagingSenderId: "155015784463",
+            appId: "1:155015784463:web:8c62db7696f099a4805b7a"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore()
     </script>
+
+    <script src="./JS/index.js"></script>
     <script src="./JS/main.js"> </script>
+
+
 </body>
 
 </html>

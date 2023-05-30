@@ -3,7 +3,29 @@ let video = document.getElementById("video")
 let form = document.getElementById("form")
 let bodegas = document.getElementById("info-cellers")
 let vinosContainer = document.getElementById("vinos-container")
+let allWines = document.getElementById("allWines")
+let cardsShop = document.getElementsByClassName("card-container-general1")
+
 var buttonNav = [];
+let dataVinos = []
+
+// LLAMADO A LA API
+const coleccionVinos = firebase.firestore().collection("BBDD");
+
+coleccionVinos.get()
+    .then((results) => {
+        console.log(results)
+        const data = results.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }));
+        dataVinos.push(...data)
+        console.log("Toda data en la coleccion 'BBDD' ", data);
+    });
+console.log(dataVinos)
+
+
+//FUNCIÓN PARA CAMBIAR DE PÁGINA
 
 for (var i = 0; i < selectNav.length; i++) {
     const element = selectNav[i];
@@ -13,9 +35,6 @@ for (var i = 0; i < selectNav.length; i++) {
     });
 }
 
-console.log(imprimir)
-
-//FUNCIÓN PARA CAMBIAR DE PÁGINA
 function imprimir(id) {
     switch (id) {
         case "about":
@@ -23,6 +42,8 @@ function imprimir(id) {
             form.innerHTML = ""
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
+            allWines.style.display = "none"
+
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=about");
 
             break;
@@ -31,6 +52,8 @@ function imprimir(id) {
             form.innerHTML = ""
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
+            allWines.style.display = "none"
+
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
 
             break;
@@ -38,6 +61,9 @@ function imprimir(id) {
             video.style.display = "none";
             form.innerHTML = ""
             vinosContainer.style.display = "none";
+            allWines.style.display = "none"
+
+
             printCellers();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=bodegas");
 
@@ -46,12 +72,17 @@ function imprimir(id) {
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
+            vinosContainer.style.display = "none";
+            allWines.style.display = "flex"
+
+            print(dataVinos);
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop");
             break;
         case "red-wine":
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
+            vinosContainer.style.display = "none";
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-rojos");
 
             break;
@@ -59,33 +90,75 @@ function imprimir(id) {
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
+            vinosContainer.style.display = "none";
 
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
             break;
         case "chardonnay":
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/chardonnay");
 
+            vinosContainer.style.display = "none";
+
+            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/chardonnay");
             break;
         case "contact":
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=contact");
             video.style.display = "none";
             printForm();
             bodegas.innerHTML = ""
+            allWines.innerHTML = ""
+            allWines.style.display = "none"
+
+
             vinosContainer.style.display = "none";
             break;
         default:
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=home");
             form.innerHTML = ""
             bodegas.innerHTML = ""
+            allWines.innerHTML = ""
             vinosContainer.style.display = "block";
+            allWines.style.display = "none"
+
             video.style.display = "block"
     }
 }
 
 
+function print(vinosArray) {
+    if (Array.isArray(vinosArray)) {
+        const vinosHTML = vinosArray.map(dataVinos =>
+            `
+            <div class="card_container1 hvr-grow1">
+            <div class="container_image1">
+                <img class="img_pages1"
+                    src="${dataVinos.Image}"
+                    alt="Vinos">
+            </div>
+            <div class="container_description1">
+                <h4>${dataVinos.Name}</h4>
+            </div>
+            <div class="container_details1">
+                <p>$5000</p>
+                <a class="button_index1" href="/Pages/Details.html?id=${dataVinos.id}">Detalle</a>
+            </div>
+        </div>
+      
+      `
+        ).join("");
+
+        allWines.innerHTML = vinosHTML;
+    } else {
+        // Manejar la situación cuando eventosArray no es un array válido
+        console.error("eventosArray no es un array válido:", vinosArray);
+    }
+}
+
+
+
+// FUNCION IMPRIMIR FORMULARIO
 function printForm() {
     form.innerHTML =
         `<div class="contenedor-form">
@@ -128,7 +201,7 @@ function printForm() {
 
 function printCellers() {
     bodegas.innerHTML =
-        `<div class="container-name">
+        `<div class="container-name1">
                 <h1>Nuestras Bodegas</h1>
             </div>
 
