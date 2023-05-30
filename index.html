@@ -15,6 +15,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tsukimi+Rounded:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- FONT AWESOME  --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="./multimedia/favicon.ico">
@@ -22,14 +27,24 @@
     <!-- ESTILOS -->
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="./Styles/cardscontainer.css">
+    <link rel="stylesheet" href="./Styles/cardsshop.css">
     <link rel="stylesheet" href="./Styles/contact.css">
     <link rel="stylesheet" href="./Styles/bodegas.css">
+    <link rel="stylesheet" href="./Styles/historia.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
 </head>
 
 <body>
     <nav>
+
         <div class="contenedor1Nav">
             <img class="logo" src="./multimedia/divini1.png" alt="Logo Divini">
+        </div>
+        <div id="container-dcto">
+            <span class="material-symbols-outlined">
+                credit_score
+            </span>
+            <p> 3 cuotas sin interés - 10% con transferencia bancaria</p>
         </div>
         <div class="navegador">
             <div class="menu-hamburguer">
@@ -52,9 +67,11 @@
                                 class="menu-link navlink">About<img src="./assets/arrow.svg" alt="arrow"
                                     class="menu-arrow"></a>
                             <ul class="menu-dropdown">
-                                <li><a class="menu-link dropdown-item" href="#">Nuestra Historia</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Bodegas</a></li>
-                                <li><a class="menu-link dropdown-item" href="https://www.aprenderdevino.es/"
+                                <li class="link_nav"><a id="our_history" class="menu-link dropdown-item navlink"
+                                        href="#history">Nuestra Historia</a></li>
+                                <li class="link_nav"><a id="cellars" class="menu-link dropdown-item navlink"
+                                        href="#info-cellars">Bodegas</a></li>
+                                <li><a class="menu-link dropdown-item navlink" href="https://www.aprenderdevino.es/"
                                         target="_blank">Aprende de Vinos</a></li>
                             </ul>
                         </li>
@@ -67,23 +84,24 @@
                                         href="#">Vinos tintos</a></li>
                                 <li class="link_nav"><a id="white-wine" class="menu-link dropdown-item navlink"
                                         href="#">Vinos blancos</a></li>
-                                <li class="link_nav"><a id="chardonnay" class="menu-link dropdown-item navlink"
-                                        href="#">Chardonnays</a></li>
                             </ul>
                         </li>
 
-                        <li class="menu-item"><a href="#" id="contacto" class="menu-link">Contacto</a></li>
+                        <li class="menu-item link_nav"><a href="#" id="contact" class="menu-link navlink">Contacto</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="shopping-bag">
-                <span class=" hvr-grow1 material-symbols-outlined">
+                <span class=" hvr-grow2 material-symbols-outlined">
                     local_mall
                 </span>
             </div>
         </div>
     </nav>
+
     <main>
+
         <!-- CONTENERDOR DEL VIDEO -->
         <div id="video" class="inicio">
             <div class="video-container">
@@ -97,7 +115,7 @@
 
         <div id="vinos-container" class="vinos-container">
             <div class="container-name">
-                <h1> Nuestros vinos</h1>
+                <h1>Los más vendidos</h1>
             </div>
             <div class="card-container-general">
                 <div class="card_container hvr-grow">
@@ -161,33 +179,97 @@
                 </div>
             </div>
         </div>
+
+        <div id="allWines" class="card-container-general1">
+            <div class="card-container2"></div>
+        </div>
+
         <!-- CONTENEDOR DEL FORUMLARIO -->
         <div id="form"></div>
 
         <!-- CONTENEDOR BODEGAS -->
-        <div id="info-cellers" class="vinos-container"></div>
+        <div id="info-cellers" class="cellers_container"></div>
+
+        <!-- CONTENEDOR DE HISTORIA -->
+        <div id="history"></div>
 
     </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-light text-dark pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> 25 AÑOS</h5>
+                    <hr class="mb-4">
+                    <p class="text-color">
+                        Llenemos nuestras copas de orgullo, compromiso y pasión, y celebremos nuestros primeros 25 años.
+                        Sigamos innovando, transformando el mundo y ofreciendo los mejores vinos argentinos.
+                        Hoy brindamos por vos, por nosotros y por todos ellos.
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> Novedades</h5>
+
+                    <hr class="mb-4">
+                    <p>
+                        <a href="#" class="text-color">Anuncios</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-color">Premios</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-color">Nuevas Sedes</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> SIGUENOS</h5>
+                    <hr class="mb-4">
+                    <p class="text-lowercase">
+                        <a href="#"> <i class="fa-brands fa-instagram  icono-footer text-color">  Instagram</i></a>
+                    </p>
+                    <p class="text-lowercase">
+                        <a href="#"><i class="fa-brands fa-facebook  icono-footer text-color">  Facebook</i></a>
+                    <p class="text-lowercase">
+                        <a href="#"> <i class="fa-brands fa-twitter icono-footer text-color">  Twitter</i></a>
+                    </p>
+                </div>
+                <hr class="mb-4">
+
+                <div class="text-center mb-2">
+                    <p class="text-color">
+                        Beber con moderacion. Prohibida su venta a menores de 18 años.
+                    </p>
+                    <h6> Copyright Todos los derechos reservados</h6>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- SCRIPTS PARA ENLAZAR CON FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
-          apiKey: "AIzaSyDVCs2kGyzyHlt1i_IWLXg4KlF4w0LSV2Y",
-          authDomain: "vinoteca-divini.firebaseapp.com",
-          projectId: "vinoteca-divini",
-          storageBucket: "vinoteca-divini.appspot.com",
-          messagingSenderId: "155015784463",
-          appId: "1:155015784463:web:8c62db7696f099a4805b7a",
+          apiKey: "",
+          authDomain: "",
+          projectId: "",
+          storageBucket: "",
+          messagingSenderId: "",
+          appId: "",
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore()
     </script>
-    
+
+    <script src="./JS/index.js"></script>
     <script src="./JS/main.js"> </script>
 
-    
+
 </body>
 
 </html>

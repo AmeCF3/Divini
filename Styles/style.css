@@ -11,7 +11,7 @@
 .contenedor1Nav {
     width: 100%;
     height: 70px;
-    border-bottom: 3px solid #b9921d;
+    border-bottom: 1px solid #b9921d;
     background-color: #f3f3f3;
     display: flex;
     flex-direction: row;
@@ -23,6 +23,21 @@
 .logo {
     width: 5rem;
     height: 4rem;
+}
+
+#container-dcto{
+    width: 100%;
+    background-color:#f3f3f3;
+    border-bottom: 3px solid #b9921d;
+    color:#5e7094 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-dcto p{
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* CONTENEDOR GENERAL DEL NAVEGADOR */
@@ -100,7 +115,6 @@
 .menu-links {
     height: 100%;
     width: 100%;
-    justify-content: space-evenly;
     transition: transform 0.5s;
     display: flex;
 }
@@ -153,8 +167,8 @@
     padding: 20px 100px 20px 20px;
 }
 
-.dropdown-item:hover{
-    background-color:#5e7094;
+.dropdown-item:hover {
+    background-color: #5e7094;
 }
 
 /* BOLSA DE COMPRAS */
@@ -177,7 +191,7 @@
 }
 
 /* EFECTO EN BOLSA DE COMPRAS */
-.hvr-grow1 {
+.hvr-grow2 {
     vertical-align: middle;
     transform: translateZ(0);
     backface-visibility: hidden;
@@ -186,9 +200,9 @@
     transition-property: transform;
 }
 
-.hvr-grow1:hover,
-.hvr-grow1:focus,
-.hvr-grow1:active {
+.hvr-grow2:hover,
+.hvr-grow2:focus,
+.hvr-grow2:active {
     transform: scale(1.1);
 }
 
@@ -209,7 +223,7 @@
 
 /* CONTENEDOR VIDEO */
 
-.inicio{
+.inicio {
     display: block;
     width: 100%;
     height: 100%;
@@ -262,6 +276,15 @@ video {
 
 /* RESPONSIVE */
 
+
+@media (min-width: 801px) {
+
+    .menu-links {
+        justify-content: space-evenly;
+    }
+ }
+
+
 @media (max-width: 800px) {
     .menu-hamburguer {
         display: flex;
@@ -286,7 +309,7 @@ video {
 
     .menu-links {
         position: fixed;
-        max-width: 400px;
+        max-width: 80%;
         width: 100%;
         top: 70px;
         bottom: 0;
@@ -312,7 +335,7 @@ video {
 
     .menu-arrow {
         margin-left: auto;
-        margin-right: 20px;
+        margin-right: 10px;
     }
 
     .menu-dropdown {
