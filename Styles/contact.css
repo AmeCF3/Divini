@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f3f3f3;
+    background-color: white;
 }
 
 .contenedor-hijo {
@@ -17,8 +17,13 @@ ul {
     padding: 0;
 }
 
+.contact-info h4 {
+    color: #b9921d;
+    font-weight: 400;
+}
+
 .contact-form {
-    background: #6b6d708c;
+    background: #6b6d703b;
 }
 
 .contact-form form {
@@ -62,15 +67,24 @@ ul {
 
 .contact-form form .button_contact:hover,
 .contact-form form .button_contact:focus {
-    background:#5e7094;
-    color:#b9921d;
+    background: #5e7094;
     transition: background-color 1s ease-out;
     outline: 0;
+}
+
+.ubication-form{
+font-weight: 500;
+}
+
+.tag-map {
+    width: 100%;
+    height: 50%;
 }
 
 /* CONTACT INFO */
 .contact-info {
     background: #5e7094;
+    color: #f3f3f3;
 }
 
 .contact-info h4,

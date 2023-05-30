@@ -190,11 +190,10 @@ function printForm() {
                 </div>
                 <div class="contact-info">
                     <h4>Más Info:</h4>
-                    <ul>
-                        <li>Ubicación: Mendoza</li>
-                    </ul>
+                    <p class="ubication-form">Ubicación: Mendoza</p>
                     <p>Contamos con bodegas ganadoras de premios internacionales</p>
                     <p>Argentina</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107218.22847454064!2d-69.00617748847809!3d-32.883104262772584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e093ec45179bf%3A0x205a78f6d20efa3a!2sMendoza%2C%20Capital%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1685420516573!5m2!1ses!2sar" class="tag-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
