@@ -330,3 +330,28 @@ video {
         border-left: 1px solid #798499;
     }
 }
+
+/* FOOTER */
+footer{
+    margin-top: 100px;
+}
+.text-color-titulo{
+    color: #b9921d;
+}
+.text-color{
+    color:#7585a7 ;
+}
+a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+p {
+    font-size: 17px;
+    font-weight: 410 !important;
+
+}
+
+i {
+    font-size: 15px;
+}
