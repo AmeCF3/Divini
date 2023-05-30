@@ -141,7 +141,7 @@ function print(vinosArray) {
                 <h4>${dataVinos.Name}</h4>
             </div>
             <div class="container_details1">
-                <p>$5000</p>
+                <p>${dataVinos.Price}</p>
                 <a class="button_index1" href="/Pages/Details.html?id=${dataVinos.id}">Detalle</a>
             </div>
         </div>
