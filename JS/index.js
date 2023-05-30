@@ -54,7 +54,7 @@ function imprimir(id) {
             printHistory();
             apagardetalles ();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
-            break;
+            break;          
         case "cellars":
             video.style.display = "none";
             form.innerHTML = ""
