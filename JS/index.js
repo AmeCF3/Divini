@@ -5,6 +5,7 @@ let bodegas = document.getElementById("info-cellers")
 let vinosContainer = document.getElementById("vinos-container")
 let allWines = document.getElementById("allWines")
 let cardsShop = document.getElementsByClassName("card-container-general1")
+let history =document.getElementById("history")
 
 var buttonNav = [];
 let dataVinos = [];
@@ -40,6 +41,9 @@ for (var i = 0; i < selectNav.length; i++) {
 }
 
 function imprimir(id) {
+    let redWines;
+    let whiteWines;
+
     switch (id) {
         case "about":
             video.style.display = "none";
@@ -47,30 +51,28 @@ function imprimir(id) {
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
             allWines.style.display = "none"
+            history.innerHTML = ""
 
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=about");
 
             break;
         case "our_history":
             video.style.display = "none";
-            form.innerHTML = ""
-            bodegas.innerHTML = ""
+            form.innerHTML = "";
+            bodegas.innerHTML = "";
             vinosContainer.style.display = "none";
-            allWines.style.display = "none"
-
+            allWines.style.display = "none";
+            printHistory();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
-
             break;
         case "cellars":
             video.style.display = "none";
             form.innerHTML = ""
             vinosContainer.style.display = "none";
             allWines.style.display = "none"
-
-
+            history.innerHTML = ""
             printCellers();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=bodegas");
-
             break;
         case "shop":
             video.style.display = "none";
@@ -78,7 +80,7 @@ function imprimir(id) {
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
             allWines.style.display = "flex"
-
+            history.innerHTML = ""
             print(dataVinos);
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop");
             break;
@@ -87,6 +89,10 @@ function imprimir(id) {
             form.innerHTML = ""
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
+            history.innerHTML = ""
+            redWines = dataVinos.filter((vino) => vino.Variety === "Cabernet Sauvignon" || vino.Variety === "Malbec");
+            print(redWines);
+            console.log(redWines);
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-rojos");
 
             break;
@@ -95,25 +101,20 @@ function imprimir(id) {
             form.innerHTML = ""
             bodegas.innerHTML = ""
             vinosContainer.style.display = "none";
+            history.innerHTML = ""
+            whiteWines = dataVinos.filter((vino) => vino.Variety === "Chardonnay");
+            print(whiteWines)
 
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
-            break;
-        case "chardonnay":
-            video.style.display = "none";
-            form.innerHTML = ""
-            bodegas.innerHTML = ""
-
-            vinosContainer.style.display = "none";
-
-            window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/chardonnay");
             break;
         case "contact":
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=contact");
             video.style.display = "none";
             bodegas.innerHTML = ""
-            allWines.innerHTML = ""
             allWines.style.display = "none"
             vinosContainer.style.display = "none";
+            history.innerHTML = ""
+
             printForm();
 
             break;
@@ -124,6 +125,8 @@ function imprimir(id) {
             allWines.innerHTML = ""
             vinosContainer.style.display = "block";
             allWines.style.display = "none"
+            history.innerHTML = ""
+
 
             video.style.display = "block"
     }
@@ -237,7 +240,7 @@ function actionForm(event) {
 
 function printCellers() {
     bodegas.innerHTML = `
-        <div class="container-name1">
+        <div class="container-name2">
             <h1>Nuestras Bodegas</h1>
         </div>
 
@@ -387,3 +390,43 @@ function actionCellers(event) {
         button: "Continuar",
     });
 }
+
+// FUNCION PARA NUESTRA HISTORIA 
+function printHistory(){
+    history.innerHTML=
+    
+    `<div class="history">
+            <div class="container-name-history-title">
+                <h1>Nuestra Historia</h1>
+            </div>
+            <div class="container-name-history">
+                <h3> Somos una empresa apasionada por el mundo de los vinos y nos complace ofrecerles una selección de
+                    vinos
+                    de tres destacadas bodegas (Zuccardi, Trapiche y Trivento). Además, queremos compartir nuestra rica
+                    historia y experiencia con ustedes. <br>
+                   
+                    Nuestra historia se remonta a décadas atrás, cuando nuestras bodegas fueron establecidas por
+                    apasionados
+                    viticultores que vieron en estas tierras el potencial para producir vinos excepcionales. Con el
+                    tiempo,
+                    hemos perfeccionado nuestras técnicas de cultivo de uvas y métodos de producción para brindarles
+                    vinos
+                    de la más alta calidad.<br>
+
+                    Cada una de las bodegas asociadas a nuestra página ha dejado su huella en la industria vinícola,
+                    gracias
+                    a su dedicación y compromiso con la excelencia. Sus vinos son el resultado de la combinación
+                    perfecta
+                    entre tradición y modernidad, reflejando el carácter único de la región y la pasión de nuestros
+                    enólogos.<br>
+
+                    Además de ofrecerles una cuidadosa selección de vinos, también les invitamos a descubrir nuestras
+                    bodegas a través de nuestros apasionantes tours. Durante estas visitas, tendrán la oportunidad de
+                    sumergirse en el fascinante proceso de elaboración del vino, desde la vendimia hasta la degustación
+                    final. Nuestros expertos guías les llevarán a través de nuestros viñedos, bodegas y salas de
+                    barricas,
+                    compartiendo con ustedes su conocimiento y amor por el vino.</h3>
+            </div>
+         </div>
+    `
+  }

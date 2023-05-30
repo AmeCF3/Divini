@@ -21,19 +21,19 @@ h1 {
 
 .card-container-general1 {
     width: 100%;
-    height: 460vh;
+    height: auto;
     display: none;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    padding-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     padding-left: 3vw;
     padding-inline-end: 90px;
     padding-inline-start: 90px;
 }
-
 
 /* CONTENEDOR DE LA TARJETA */
 
@@ -44,9 +44,10 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     background-color: #5e7094;
     overflow: hidden;
+    margin-bottom: 30px;
+
 }
 
 /* EFECTO TARJETAS */
@@ -85,15 +86,16 @@ h1 {
 
 .container_description1 {
     width: 100%;
-    height: 18%;
+    height: 40%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
-    overflow:inherit;
-    padding: 3px;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 20px;
 }
 
-h4 {
+.container_description1 h4 {
     font-size: 19px;
     color: #f3f3f3;
     padding-top: 12px;
@@ -102,19 +104,22 @@ h4 {
 /* CONTENEDOR DEL PRECIO Y EL BOTÓN DE DETALLE */
 .container_details1 {
     width: 100%;
-    height: 30%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    text-align: center;
     align-items: center;
     color: #f3f3f3;
 }
 
-h4,
-p {
+.container_description1 h4,
+.container_details1 p {
     cursor: default;
     font-family: 'Tsukimi Rounded', sans-serif;
     font-weight: 100;
+    justify-content: center;
+    align-items: center;
 }
 
 /* CARACTERISTICAS Y ESTILO DEL BOTÓN */
@@ -128,9 +133,9 @@ p {
     border: 1px solid #5e7094;
     border-radius: 4px;
     padding: 3px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
-    height: 60%;
+    height: 40%;
     font-family: 'Fjalla One', sans-serif;
     font-weight: 200;
 }

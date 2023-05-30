@@ -16,7 +16,10 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tsukimi+Rounded:wght@300;400;500&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    <!-- FONT AWESOME  --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="./multimedia/favicon.ico">
@@ -27,6 +30,8 @@
     <link rel="stylesheet" href="./Styles/cardsshop.css">
     <link rel="stylesheet" href="./Styles/contact.css">
     <link rel="stylesheet" href="./Styles/bodegas.css">
+    <link rel="stylesheet" href="./Styles/historia.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
 </head>
 
 <body>
@@ -38,7 +43,7 @@
         <div id="container-dcto">
             <span class="material-symbols-outlined">
                 credit_score
-                </span>
+            </span>
             <p> 3 cuotas sin interés - 10% con transferencia bancaria</p>
         </div>
         <div class="navegador">
@@ -63,9 +68,9 @@
                                     class="menu-arrow"></a>
                             <ul class="menu-dropdown">
                                 <li class="link_nav"><a id="our_history" class="menu-link dropdown-item navlink"
-                                        href="#">Nuestra Historia</a></li>
+                                        href="#history">Nuestra Historia</a></li>
                                 <li class="link_nav"><a id="cellars" class="menu-link dropdown-item navlink"
-                                        href="#">Bodegas</a></li>
+                                        href="#info-cellars">Bodegas</a></li>
                                 <li><a class="menu-link dropdown-item navlink" href="https://www.aprenderdevino.es/"
                                         target="_blank">Aprende de Vinos</a></li>
                             </ul>
@@ -79,8 +84,6 @@
                                         href="#">Vinos tintos</a></li>
                                 <li class="link_nav"><a id="white-wine" class="menu-link dropdown-item navlink"
                                         href="#">Vinos blancos</a></li>
-                                <li class="link_nav"><a id="chardonnay" class="menu-link dropdown-item navlink"
-                                        href="#">Chardonnays</a></li>
                             </ul>
                         </li>
 
@@ -187,8 +190,64 @@
         <!-- CONTENEDOR BODEGAS -->
         <div id="info-cellers" class="cellers_container"></div>
 
+        <!-- CONTENEDOR DE HISTORIA -->
+        <div id="history"></div>
+
     </main>
 
+    <!-- FOOTER -->
+    <footer class="bg-light text-dark pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> 25 AÑOS</h5>
+                    <hr class="mb-4">
+                    <p class="text-color">
+                        Llenemos nuestras copas de orgullo, compromiso y pasión, y celebremos nuestros primeros 25 años.
+                        Sigamos innovando, transformando el mundo y ofreciendo los mejores vinos argentinos.
+                        Hoy brindamos por vos, por nosotros y por todos ellos.
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> Novedades</h5>
+
+                    <hr class="mb-4">
+                    <p>
+                        <a href="#" class="text-color">Anuncios</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-color">Premios</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-color">Nuevas Sedes</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-color-titulo"> SIGUENOS</h5>
+                    <hr class="mb-4">
+                    <p class="text-lowercase">
+                        <a href="#"> <i class="fa-brands fa-instagram  icono-footer text-color">  Instagram</i></a>
+                    </p>
+                    <p class="text-lowercase">
+                        <a href="#"><i class="fa-brands fa-facebook  icono-footer text-color">  Facebook</i></a>
+                    <p class="text-lowercase">
+                        <a href="#"> <i class="fa-brands fa-twitter icono-footer text-color">  Twitter</i></a>
+                    </p>
+                </div>
+                <hr class="mb-4">
+
+                <div class="text-center mb-2">
+                    <p class="text-color">
+                        Beber con moderacion. Prohibida su venta a menores de 18 años.
+                    </p>
+                    <h6> Copyright Todos los derechos reservados</h6>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- SCRIPTS PARA ENLAZAR CON FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
