@@ -146,3 +146,78 @@ h1 {
     color: #5e7094;
     cursor: pointer;
 }
+
+/* CONTENEDOR GENERAL DE DETAILS */
+
+#detalles{
+    width: 100%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #6b6d703b;
+    
+}
+
+.detalles {
+    display: flex;
+    width: 80%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    -webkit-box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
+-moz-box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
+box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
+}
+.detalleIzquierda{
+    height: auto;
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tituloDetalle{
+    font-size: 2rem;
+    color: #5e7094;
+    text-align:center ;
+    width: 80%;
+
+}
+.personalizada {
+    width: 50%;
+    height: auto;
+    text-align: justify;
+    box-shadow: none;
+}
+.galeriaDetalle{
+    width: 100%;
+    margin-top: 0cm;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.card-detalle{
+    
+    height: 350px;
+    width: 40%;
+    box-shadow:none;
+    border:none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card-detalle>img{
+  
+    max-height:100% ;
+    max-width: 100%;
+    
+}
+
+/* alineacion de la tabla de ficha tecnica */
+.text-center {
+    margin-top: 100px;
+    text-align: left !important;
+}

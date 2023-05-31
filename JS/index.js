@@ -52,6 +52,7 @@ function imprimir(id) {
             vinosContainer.style.display = "none";
             allWines.style.display = "none";
             printHistory();
+            apagardetalles ();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
             break;
         case "cellars":
@@ -61,6 +62,7 @@ function imprimir(id) {
             allWines.style.display = "none"
             history.innerHTML = ""
             printCellers();
+            apagardetalles ();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=bodegas");
             break;
         case "shop":
@@ -71,6 +73,7 @@ function imprimir(id) {
             allWines.style.display = "flex"
             history.innerHTML = ""
             print(dataVinos);
+            apagardetalles ();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop");
             break;
         case "red-wine":
@@ -82,6 +85,7 @@ function imprimir(id) {
             redWines = dataVinos.filter((vino) => vino.Variety === "Cabernet Sauvignon" || vino.Variety === "Malbec");
             print(redWines);
             console.log(redWines);
+            apagardetalles ();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-rojos");
 
             break;
@@ -93,7 +97,7 @@ function imprimir(id) {
             history.innerHTML = ""
             whiteWines = dataVinos.filter((vino) => vino.Variety === "Chardonnay");
             print(whiteWines)
-
+            apagardetalles ();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
             break;
         case "contact":
@@ -103,7 +107,7 @@ function imprimir(id) {
             allWines.style.display = "none"
             vinosContainer.style.display = "none";
             history.innerHTML = ""
-
+            apagardetalles ();
             printForm();
 
             break;
@@ -115,8 +119,7 @@ function imprimir(id) {
             vinosContainer.style.display = "block";
             allWines.style.display = "none"
             history.innerHTML = ""
-
-
+            apagardetalles ();
             video.style.display = "block"
     }
 }
@@ -167,8 +170,6 @@ function print(vinosArray) {
  
 
 }
-
-
 
 
 // FUNCIÓN IMPRIMIR FORMULARIO

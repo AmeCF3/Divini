@@ -1,21 +1,22 @@
+var htmlDetalle = document.getElementById("detalles")
 function displayDetalle(id) {
-   
 
-    var detalleVino = []
-    console.log (dataVinos)
 
-    for (var i = 0; i < dataVinos.length; i++) {
-        if (dataVinos[i].id == id) {
-            detalleVino.push(dataVinos[i]);
+  var detalleVino = []
+  console.log(dataVinos)
 
-        }
+  for (var i = 0; i < dataVinos.length; i++) {
+    if (dataVinos[i].id == id) {
+      detalleVino.push(dataVinos[i]);
+
     }
+  }
 
-    console.log(detalleVino)
+  console.log(detalleVino)
 
-    var contenidoDetalle
-    contenidoDetalle =
-        `<div class="detalleIzquierda">
+  var contenidoDetalle
+  contenidoDetalle =
+    `<div class="detalleIzquierda">
             <div class="tituloDetalle"><p>${detalleVino[0].Name}</p></div>
             <div class="galeriaDetalle">
               <div class="card card-detalle">
@@ -25,6 +26,8 @@ function displayDetalle(id) {
         </div>
 
 <!-- FICHA TECNICA -->
+
+
 <div class="card text-center personalizada">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
@@ -40,23 +43,24 @@ function displayDetalle(id) {
           <th scope="row">Bodega: ${detalleVino[0].Winery}</th>
           <td></td>
         </tr>
-    
+  
         <tr>
-          <th scope="row">Crianza: ${detalleVino[0].Maturation}</th>
+          <th scope="row">Variedad: Vino ${detalleVino[0].Variety}</th>
           <td></td>
         </tr>
-     
-        <tr>
-          <th scope="row">Tipo de producto: Vino ${detalleVino[0].Variety}</th>
-          <td></td>
-        </tr>
-    
+
         <tr>
           <th scope="row">Descripción:${detalleVino[0].Description}</th>
           <td></td>
         </tr>
+
         <tr>
-          <th scope="row">Precio:${detalleVino[0].Price}</th>
+          <th scope="row">Precio: $${detalleVino[0].Price}</th>
+          <td></td>
+        </tr>
+    
+        <tr>
+          <th scope="row">Crianza: ${detalleVino[0].Maturation}</th>
           <td></td>
         </tr>
 
@@ -70,8 +74,6 @@ function displayDetalle(id) {
   </div>
   </div>
     `
-
-    var htmlDetalle = document.getElementById("detalles")
     htmlDetalle.style.display = "flex"
     htmlDetalle.innerHTML = contenidoDetalle
     form.innerHTML = ""
@@ -79,5 +81,10 @@ function displayDetalle(id) {
     allWines.innerHTML = ""
     vinosContainer.style.display = "none";
     allWines.style.display = "none"
-    history.innerHTML = ""
+    history.innerHTML = ""  
+}
+
+
+function apagardetalles() {
+  htmlDetalle.innerHTML = ""
 }
