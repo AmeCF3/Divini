@@ -24,7 +24,6 @@
 
     <!-- ESTILOS -->
     <link rel="stylesheet" href="./Styles/style.css">
-    <link rel="stylesheet" href="./Styles/cardscontainer.css">
     <link rel="stylesheet" href="./Styles/cardsshop.css">
     <link rel="stylesheet" href="./Styles/contact.css">
     <link rel="stylesheet" href="./Styles/bodegas.css">
@@ -111,71 +110,11 @@
 
         <div id="vinos-container" class="vinos-container">
             <div class="container-name">
-                <h1>Los más vendidos</h1>
+                <h1 id="position-name"></h1>
             </div>
-            <div class="card-container-general">
-                <div class="card_container hvr-grow">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-
-                <div class="card_container hvr-grow ">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-
-                <div class="card_container hvr-grow">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-
-                <div class="card_container hvr-grow">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-            </div>
+                
         </div>
-
+        <!-- CONTENEDOR DE TARJETAS EN EL SHOP -->
         <div id="allWines" class="card-container-general1">
             <div class="card-container2"></div>
         </div>
@@ -241,7 +180,13 @@
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
-        
+            apiKey: "AIzaSyDVCs2kGyzyHlt1i_IWLXg4KlF4w0LSV2Y",
+            authDomain: "vinoteca-divini.firebaseapp.com",
+            databaseURL: "https://vinoteca-divini-default-rtdb.firebaseio.com",
+            projectId: "vinoteca-divini",
+            storageBucket: "vinoteca-divini.appspot.com",
+            messagingSenderId: "155015784463",
+            appId: "1:155015784463:web:8c62db7696f099a4805b7a"
         };
      // Initialize Firebase
      firebase.initializeApp(firebaseConfig);

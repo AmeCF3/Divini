@@ -2,7 +2,7 @@
 
 .container-name {
     width: 100%;
-    height: 20vh;
+    height: 23vh;
     background-color: #f3f3f3;
     display: flex;
     align-items: flex-end;
@@ -14,7 +14,7 @@ h1 {
     color: #b9921d;
     font-family: 'Tsukimi Rounded', sans-serif;
     font-weight: 200;
-    font-size: 80px;
+    font-size: 6vw;
 }
 
 /* CONTENEDOR GENERAL DE TODAS LAS TARJETAS */
