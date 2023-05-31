@@ -5,7 +5,7 @@ let bodegas = document.getElementById("info-cellers")
 let vinosContainer = document.getElementById("vinos-container")
 let allWines = document.getElementById("allWines")
 let cardsShop = document.getElementsByClassName("card-container-general1")
-let history =document.getElementById("history")
+let history = document.getElementById("history")
 
 var buttonNav = [];
 let dataVinos = [];
@@ -46,17 +46,6 @@ function imprimir(id) {
 
     switch (id) {
         case "about":
-            video.style.display = "none";
-            form.innerHTML = ""
-            bodegas.innerHTML = ""
-            vinosContainer.style.display = "none";
-            allWines.style.display = "none"
-            history.innerHTML = ""
-
-            window.history.replaceState(null, null, window.location.origin + "/index.html?time=about");
-
-            break;
-        case "our_history":
             video.style.display = "none";
             form.innerHTML = "";
             bodegas.innerHTML = "";
@@ -132,7 +121,7 @@ function imprimir(id) {
     }
 }
 
-
+// FUNCION PARA PINTAR LAS TARJETAS 
 function print(vinosArray) {
     if (Array.isArray(vinosArray)) {
         const vinosHTML = vinosArray.map(dataVinos =>
@@ -148,7 +137,8 @@ function print(vinosArray) {
             </div>
             <div class="container_details1">
                 <p>$${dataVinos.Price}</p>
-                <a class="button_index1" href="/Pages/Details.html?id=${dataVinos.id}">Detalle</a>
+               
+                <button id=${dataVinos.id} class="button_index1">Detalle</button>
             </div>
         </div>
       
@@ -160,7 +150,25 @@ function print(vinosArray) {
         // Manejar la situación cuando eventosArray no es un array válido
         console.error("eventosArray no es un array válido:", vinosArray);
     }
+
+    document.getElementById("tarjetas").innerHTML = allWines;
+    var botones = document.querySelectorAll(".button_index1")
+    console.log(botones)
+    for (var i = 0; i < botones.length; i++) {
+        botones[i].addEventListener("click", function (e) {
+
+            console.log("hice click")
+            console.log(e.target.id)
+            displayDetalle(e.target.id)
+            
+
+        })
+    }
+ 
+
 }
+
+
 
 
 // FUNCIÓN IMPRIMIR FORMULARIO
@@ -392,10 +400,10 @@ function actionCellers(event) {
 }
 
 // FUNCION PARA NUESTRA HISTORIA 
-function printHistory(){
-    history.innerHTML=
-    
-    `<div class="history">
+function printHistory() {
+    history.innerHTML =
+
+        `<div class="history">
             <div class="container-name-history-title">
                 <h1>Nuestra Historia</h1>
             </div>
@@ -429,4 +437,4 @@ function printHistory(){
             </div>
          </div>
     `
-  }
+}

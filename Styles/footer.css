@@ -1,26 +1,83 @@
-/* FOOTER */ 
-footer { 
-    margin-top: 100px; 
+/* /:::::Pie de Pagina/  */
+.pie-pagina { 
+    width: 100%; 
 } 
  
-.text-color-titulo { 
+.sin-linea { 
+    text-decoration: none; 
+    font-size: 17px; 
+    color: #7585a7; 
+} 
+ .box h2{
+    font-family: 'Poppins', sans-serif;
+ }
+.pie-pagina .grupo-1 { 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: auto; 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 50px; 
+    padding: 45px 0px; 
+} 
+ 
+.pie-pagina .grupo-1 .box figure { 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
+ 
+.pie-pagina .grupo-1 .box figure img { 
+    width: 250px; 
+} 
+ 
+.pie-pagina .grupo-1 .box h2 { 
+    color: #b9921d; 
+    margin-bottom: 25px; 
+    font-size: 20px; 
+} 
+ 
+.pie-pagina .grupo-1 .box p { 
+    color: #7585a7; 
+    margin-bottom: 10px; 
+    font-size: 17px; 
+} 
+ 
+.pie-pagina .grupo-1 .red-social a { 
+    display: inline-block; 
+    text-decoration: none; 
+    width: 45px; 
+    height: 45px; 
+    font-size: 30px;
+    line-height: 45px; 
+    color: #7585a7; 
+    margin-right: 10px; 
+    text-align: center; 
+    transition: all 300ms ease; 
+} 
+ 
+.pie-pagina .grupo-1 .red-social a:hover { 
     color: #b9921d; 
 } 
  
-.text-color { 
+.pie-pagina .grupo-2 { 
+     padding: 15px 10px; 
+    text-align: center; 
     color: #7585a7; 
+    font-family: 'Poppins', sans-serif;
 } 
  
-a { 
-    text-decoration: none; 
-    font-size: 17px; 
-} 
- 
-p { 
-    font-size: 17px; 
-    font-weight: 410 !important; 
- } 
- 
-i { 
+.pie-pagina .grupo-2 small { 
     font-size: 15px; 
+} 
+ 
+@media screen and (max-width:800px) { 
+    .pie-pagina .grupo-1 { 
+        width: 90%; 
+        grid-template-columns: repeat(1, 1fr); 
+        grid-gap: 30px; 
+        padding: 35px 0px; 
+    } 
 }
