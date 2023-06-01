@@ -2,7 +2,7 @@
 
 .container-name {
     width: 100%;
-    height: 20vh;
+    height: 23vh;
     background-color: #f3f3f3;
     display: flex;
     align-items: flex-end;
@@ -14,21 +14,26 @@ h1 {
     color: #b9921d;
     font-family: 'Tsukimi Rounded', sans-serif;
     font-weight: 200;
-    font-size: 80px;
+    font-size: 6vw;
 }
 
 /* CONTENEDOR GENERAL DE TODAS LAS TARJETAS */
 
 .card-container-general1 {
     width: 100%;
-    height: 500vh;
+    height: auto;
     display: none;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    padding-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 3vw;
+    padding-inline-end: 90px;
+    padding-inline-start: 90px;
+    background-color: #f3f3f3;
 }
 
 /* CONTENEDOR DE LA TARJETA */
@@ -40,9 +45,10 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     background-color: #5e7094;
     overflow: hidden;
+    margin-bottom: 30px;
+
 }
 
 /* EFECTO TARJETAS */
@@ -81,14 +87,17 @@ h1 {
 
 .container_description1 {
     width: 100%;
-    height: 20%;
+    height: 40%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 20px;
 }
 
-h4 {
-    font-size: 20px;
+.container_description1 h4 {
+    font-size: 19px;
     color: #f3f3f3;
     padding-top: 12px;
 }
@@ -96,19 +105,22 @@ h4 {
 /* CONTENEDOR DEL PRECIO Y EL BOTÓN DE DETALLE */
 .container_details1 {
     width: 100%;
-    height: 30%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    text-align: center;
     align-items: center;
     color: #f3f3f3;
 }
 
-h4,
-p {
+.container_description1 h4,
+.container_details1 p {
     cursor: default;
     font-family: 'Tsukimi Rounded', sans-serif;
     font-weight: 100;
+    justify-content: center;
+    align-items: center;
 }
 
 /* CARACTERISTICAS Y ESTILO DEL BOTÓN */
@@ -122,11 +134,93 @@ p {
     border: 1px solid #5e7094;
     border-radius: 4px;
     padding: 3px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
-    height: 60%;
+    height: 40%;
     font-family: 'Fjalla One', sans-serif;
     font-weight: 200;
+}
+
+.button_index1:hover {
+    background-color: #b9921d;
+    border: 1px solid #b9921d;
+    color: #5e7094;
+    cursor: pointer;
+}
+
+/* CONTENEDOR GENERAL DE DETAILS */
+
+#detalles{
+    width: 100%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #6b6d703b;
+    
+}
+
+.detalles {
+    display: flex;
+    width: 80%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    -webkit-box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
+-moz-box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
+box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
+}
+.detalleIzquierda{
+    height: auto;
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tituloDetalle{
+    font-size: 2rem;
+    color: #5e7094;
+    text-align:center ;
+    width: 80%;
+
+}
+.personalizada {
+    width: 50%;
+    height: auto;
+    text-align: justify;
+    box-shadow: none;
+}
+.galeriaDetalle{
+    width: 100%;
+    margin-top: 0cm;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.card-detalle{
+    
+    height: 350px;
+    width: 40%;
+    box-shadow:none;
+    border:none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card-detalle>img{
+  
+    max-height:100% ;
+    max-width: 100%;
+    
+}
+
+/* alineacion de la tabla de ficha tecnica */
+.text-center {
+    margin-top: 100px;
+    text-align: left !important;
 }
 
 .button_index1:hover {

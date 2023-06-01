@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -15,21 +15,33 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tsukimi+Rounded:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="./multimedia/favicon.ico">
 
     <!-- ESTILOS -->
     <link rel="stylesheet" href="./Styles/style.css">
-    <link rel="stylesheet" href="./Styles/cardscontainer.css">
+    <link rel="stylesheet" href="./Styles/cardsshop.css">
     <link rel="stylesheet" href="./Styles/contact.css">
     <link rel="stylesheet" href="./Styles/bodegas.css">
+    <link rel="stylesheet" href="./Styles/historia.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
 </head>
 
 <body>
     <nav>
+
         <div class="contenedor1Nav">
             <img class="logo" src="./multimedia/divini1.png" alt="Logo Divini">
+        </div>
+        <div id="container-dcto">
+            <span class="material-symbols-outlined">
+                credit_score
+            </span>
+            <p> 3 cuotas sin interés - 10% con transferencia bancaria</p>
         </div>
         <div class="navegador">
             <div class="menu-hamburguer">
@@ -52,9 +64,9 @@
                                 class="menu-link navlink">About<img src="./assets/arrow.svg" alt="arrow"
                                     class="menu-arrow"></a>
                             <ul class="menu-dropdown">
-                                <li><a class="menu-link dropdown-item" href="#">Nuestra Historia</a></li>
-                                <li><a class="menu-link dropdown-item" href="#">Bodegas</a></li>
-                                <li><a class="menu-link dropdown-item" href="https://www.aprenderdevino.es/"
+                                <li class="link_nav"><a id="cellars" class="menu-link dropdown-item navlink"
+                                        href="#info-cellars">Bodegas</a></li>
+                                <li><a class="menu-link dropdown-item navlink" href="https://www.aprenderdevino.es/"
                                         target="_blank">Aprende de Vinos</a></li>
                             </ul>
                         </li>
@@ -67,23 +79,24 @@
                                         href="#">Vinos tintos</a></li>
                                 <li class="link_nav"><a id="white-wine" class="menu-link dropdown-item navlink"
                                         href="#">Vinos blancos</a></li>
-                                <li class="link_nav"><a id="chardonnay" class="menu-link dropdown-item navlink"
-                                        href="#">Chardonnays</a></li>
                             </ul>
                         </li>
 
-                        <li class="menu-item"><a href="#" id="contacto" class="menu-link">Contacto</a></li>
+                        <li class="menu-item link_nav"><a href="#" id="contact" class="menu-link navlink">Contacto</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="shopping-bag">
-                <span class=" hvr-grow1 material-symbols-outlined">
+                <span class=" hvr-grow2 material-symbols-outlined">
                     local_mall
                 </span>
             </div>
         </div>
     </nav>
+
     <main>
+
         <!-- CONTENERDOR DEL VIDEO -->
         <div id="video" class="inicio">
             <div class="video-container">
@@ -97,96 +110,94 @@
 
         <div id="vinos-container" class="vinos-container">
             <div class="container-name">
-                <h1> Nuestros vinos</h1>
+                <h1 id="position-name"></h1>
             </div>
-            <div class="card-container-general">
-                <div class="card_container hvr-grow">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-
-                <div class="card_container hvr-grow ">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-
-                <div class="card_container hvr-grow">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-
-                <div class="card_container hvr-grow">
-                    <div class="container_image">
-                        <img class="img_pages"
-                            src="./multimedia/Trapiche Terroir Series Finca Las Piedras Chardonnay - Edición Limitada.webp"
-                            alt="Vinos">
-                    </div>
-                    <div class="container_description">
-                        <h4>Trapiche Terroir Chardonnay</h4>
-                    </div>
-                    <div class="container_details">
-                        <p>$5000</p>
-                        <a class="button_index" href="/Pages/Details.html?id=${evento.id}">Detalle</a>
-                    </div>
-                </div>
-            </div>
+                
         </div>
+        <!-- CONTENEDOR DE TARJETAS EN EL SHOP -->
+        <div id="allWines" class="card-container-general1">
+            <div class="card-container2"></div>
+        </div>
+
+        <div id="detalles">
+        </div>
+        <div class="row row-cols-auto" id="tarjetas"></div>
+
         <!-- CONTENEDOR DEL FORUMLARIO -->
         <div id="form"></div>
 
         <!-- CONTENEDOR BODEGAS -->
-        <div id="info-cellers" class="vinos-container"></div>
+        <div id="info-cellers" class="cellers_container"></div>
+
+        <!-- CONTENEDOR DE HISTORIA -->
+        <div id="history"></div>
 
     </main>
+
+    <!-- FOOTER -->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Llenemos nuestras copas de orgullo, compromiso y pasión, y celebremos nuestros primeros 25 años.
+                    Sigamos innovando, transformando el mundo y ofreciendo los mejores vinos argentinos.
+                    Hoy brindamos por vos, por nosotros y por todos ellos.</p>
+            </div>
+            <div class="box">
+                <h2>NOVEDADES</h2>
+                <p>
+                    <a href="#" class="sin-linea">Anuncios</a>
+                </p>
+                <p>
+                    <a href="#" class="sin-linea">Premios</a>
+                </p>
+                <p>
+                    <a href="#" class="sin-linea">Nuevas Sedes</a>
+                </p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://es-la.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=es" target="_blank" class="fa fa-twitter"></a>
+                    <a href="https://www.youtube.com/?hl=ES" target="_blank" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <hr class="linea-division">
+        <div class="grupo-2">
+            <p>
+                Beber con moderacion. Prohibida su venta a menores de 18 años.
+            </p>
+            <br>
+            <small>&copy; 2023 <b>DENA</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+    <!-- SCRIPTS PARA ENLAZAR CON FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
-          apiKey: "",
-          authDomain: "",
-          projectId: "",
-          storageBucket: "",
-          messagingSenderId: "",
-          appId: "",
+            apiKey: "",
+            authDomain: "",
+            databaseURL: "https://vinoteca-divini-default-rtdb.firebaseio.com",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: "",
+            appId: ""
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore()
     </script>
+
+    <script src="./JS/details.js"></script>
+    <script src="./JS/index.js"></script>
     <script src="./JS/main.js"> </script>
 
-    
+
 </body>
 
 </html>
