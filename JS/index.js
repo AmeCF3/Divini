@@ -15,25 +15,28 @@ let dataVinos = [];
 // LLAMADO A LA API
 const coleccionVinos = firebase.firestore().collection("BBDD");
 
-function getDataVinos() {
-    coleccionVinos
-        .get()
-        .then((results) => {
-            dataVinos = results.docs
-                .filter((doc) => doc.data().Category === "vinos")
-                .map((doc) => ({
-                    id: doc.id,
-                    ...doc.data(),
-                }));
-            console.log(dataVinos);
-        })
-        .catch((error) => {
-            console.error("Error al obtener los datos:", error);
-        });
-}
+async function getDataVinos() {
+    try {
+      const results = await coleccionVinos.get();
+      dataVinos = results.docs
+        .filter((doc) => doc.data().Category === "vinos")
+        .map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+      console.log(dataVinos);
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  }
+  
 
 // Llamar a la función para obtener los vinos automáticamente
-getDataVinos();
+window.addEventListener('load', function () {
+    getDataVinos().then(() => {
+        imprimir("home");
+    });
+});
 
 //FUNCIÓN PARA CAMBIAR DE PÁGINA
 
