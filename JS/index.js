@@ -5,7 +5,8 @@ let bodegas = document.getElementById("info-cellers")
 let vinosContainer = document.getElementById("vinos-container")
 let allWines = document.getElementById("allWines")
 let cardsShop = document.getElementsByClassName("card-container-general1")
-let history = document.getElementById("history")
+let history =document.getElementById("history")
+let positionName = document.getElementById("allWines")
 
 var buttonNav = [];
 let dataVinos = [];
@@ -13,21 +14,24 @@ let dataVinos = [];
 // LLAMADO A LA API
 const coleccionVinos = firebase.firestore().collection("BBDD");
 
-coleccionVinos.get()
-    .then((results) => {
-        const data = results.docs
-            .filter((doc) => doc.data().Category === "vinos")
-            .map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-        dataVinos.push(...data);
-    })
-    .catch((error) => {
-        console.error("Error al obtener los datos:", error);
-    });
+function getDataVinos() {
+    coleccionVinos.get()
+        .then((results) => {
+            dataVinos = results.docs
+                .filter((doc) => doc.data().Category === "vinos")
+                .map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+            console.log(dataVinos);
+        })
+        .catch((error) => {
+            console.error("Error al obtener los datos:", error);
+        });
+}
 
-console.log(dataVinos)
+// Llamar a la función para obtener los vinos automáticamente
+getDataVinos();
 
 
 //FUNCIÓN PARA CAMBIAR DE PÁGINA
@@ -54,7 +58,7 @@ function imprimir(id) {
             printHistory();
             apagardetalles ();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
-            break;
+            break;          
         case "cellars":
             video.style.display = "none";
             form.innerHTML = ""
@@ -62,42 +66,46 @@ function imprimir(id) {
             allWines.style.display = "none"
             history.innerHTML = ""
             printCellers();
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=bodegas");
             break;
         case "shop":
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-            vinosContainer.style.display = "none";
+            vinosContainer.style.display = "block";
+            positionName.innerHTML = "Todos nuestros vinos"
             allWines.style.display = "flex"
             history.innerHTML = ""
             print(dataVinos);
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop");
             break;
         case "red-wine":
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-            vinosContainer.style.display = "none";
+            vinosContainer.style.display = "block";
+            positionName.innerHTML = "Nuestros vinos tintos"
             history.innerHTML = ""
+            allWines.style.display = "flex"
             redWines = dataVinos.filter((vino) => vino.Variety === "Cabernet Sauvignon" || vino.Variety === "Malbec");
             print(redWines);
             console.log(redWines);
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-rojos");
-
             break;
         case "white-wine":
             video.style.display = "none";
             form.innerHTML = ""
             bodegas.innerHTML = ""
-            vinosContainer.style.display = "none";
+            vinosContainer.style.display = "block";
+            positionName.innerHTML = "Nuestros vinos blancos"
             history.innerHTML = ""
+            allWines.style.display = "flex"
             whiteWines = dataVinos.filter((vino) => vino.Variety === "Chardonnay");
             print(whiteWines)
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
             break;
         case "contact":
@@ -107,9 +115,8 @@ function imprimir(id) {
             allWines.style.display = "none"
             vinosContainer.style.display = "none";
             history.innerHTML = ""
-            apagardetalles ();
+            apagardetalles()
             printForm();
-
             break;
         default:
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=home");
@@ -117,10 +124,15 @@ function imprimir(id) {
             bodegas.innerHTML = ""
             allWines.innerHTML = ""
             vinosContainer.style.display = "block";
-            allWines.style.display = "none"
+            allWines.style.display = "flex"
             history.innerHTML = ""
-            apagardetalles ();
+            apagardetalles()
+
+
             video.style.display = "block"
+            positionName.innerHTML = "Nuestros más económicos"
+            const vinosFiltrados = dataVinos.filter((vino) => vino.Price <= 1500);
+            print(vinosFiltrados)
     }
 }
 
@@ -154,7 +166,7 @@ function print(vinosArray) {
         console.error("eventosArray no es un array válido:", vinosArray);
     }
 
-    document.getElementById("tarjetas").innerHTML = allWines;
+    document.getElementById("tarjetas").appendChild(allWines);
     var botones = document.querySelectorAll(".button_index1")
     console.log(botones)
     for (var i = 0; i < botones.length; i++) {
@@ -170,7 +182,6 @@ function print(vinosArray) {
  
 
 }
-
 
 // FUNCIÓN IMPRIMIR FORMULARIO
 function printForm() {
@@ -403,7 +414,6 @@ function actionCellers(event) {
 // FUNCION PARA NUESTRA HISTORIA 
 function printHistory() {
     history.innerHTML =
-
         `<div class="history">
             <div class="container-name-history-title">
                 <h1>Nuestra Historia</h1>
@@ -428,7 +438,6 @@ function printHistory() {
                     perfecta
                     entre tradición y modernidad, reflejando el carácter único de la región y la pasión de nuestros
                     enólogos.<br>
-
                     Además de ofrecerles una cuidadosa selección de vinos, también les invitamos a descubrir nuestras
                     bodegas a través de nuestros apasionantes tours. Durante estas visitas, tendrán la oportunidad de
                     sumergirse en el fascinante proceso de elaboración del vino, desde la vendimia hasta la degustación
@@ -439,3 +448,23 @@ function printHistory() {
          </div>
     `
 }
+
+// BUSCADOR
+var inputSearch = document.getElementById("buscador");
+
+inputSearch.addEventListener("keyup", function (event) {
+    var datoInput = event.target.value;
+    var datosOrdenados = datoInput.trim().toLowerCase();
+    var filtrado = dataVinos.filter(vino => vino.Name.toLowerCase().includes(datosOrdenados));
+
+    if (filtrado.length === 0) {
+        // No se encontraron resultados
+        allWines.innerHTML =
+            `<div class="ceroSearch">
+                <img class="imgCero" src="./multimedia/nofoundmin.png" alt="SinResultados">
+            </div>`;
+    } else {
+        // Imprimir los resultados filtrados
+        print(filtrado);
+    }
+});

@@ -183,13 +183,20 @@ box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
     color: #5e7094;
     text-align:center ;
     width: 80%;
+    font-family: 'Tsukimi Rounded', sans-serif;
 
+}
+.ft{
+    font-size: 1rem;
+    color: #5e7094;
+    width: 80%;
+    font-family: 'Tsukimi Rounded', sans-serif; 
 }
 .personalizada {
     width: 50%;
     height: auto;
     text-align: justify;
-    box-shadow: none;
+    font-family: 'Poppins', sans-serif;
 }
 .galeriaDetalle{
     width: 100%;
@@ -218,6 +225,8 @@ box-shadow: -8px -5px 5px -7px rgba(0,0,0,0.55);
 
 /* alineacion de la tabla de ficha tecnica */
 .text-center {
-    margin-top: 100px;
-    text-align: left !important;
+    margin-top: 30px;
+    text-align: justify;
+    width: 45%;
+    
 }

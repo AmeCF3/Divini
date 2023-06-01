@@ -30,46 +30,46 @@ function displayDetalle(id) {
 
 <div class="card text-center personalizada">
   <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href="#">FICHA TÉCNICA</a>
-      </li>
+    <ul class="ft">
+      
+        <a>FICHA TÉCNICA</a>
+      
     </ul>
   </div>
   <div class="card-body">
     <table class="table table-hover">
       <tbody>
         <tr>
-          <th scope="row">Bodega: ${detalleVino[0].Winery}</th>
-          <td></td>
+          <th scope="row">Bodega</th>
+          <td scope="row">${detalleVino[0].Winery}</td>
         </tr>
   
         <tr>
-          <th scope="row">Variedad: Vino ${detalleVino[0].Variety}</th>
-          <td></td>
+          <th scope="row">Variedad</th>
+          <td scope="row">${detalleVino[0].Variety}</td>
         </tr>
 
         <tr>
-          <th scope="row">Descripción:${detalleVino[0].Description}</th>
-          <td></td>
+          <th scope="row">Descripción</th>
+          <td colspan="2"> ${detalleVino[0].Description}</td>
         </tr>
 
         <tr>
-          <th scope="row">Precio: $${detalleVino[0].Price}</th>
-          <td></td>
+          <th scope="row">Precio</th>
+          <td scope="row">$${detalleVino[0].Price}</td>
         </tr>
     
         <tr>
-          <th scope="row">Crianza: ${detalleVino[0].Maturation}</th>
-          <td></td>
+          <th scope="row">Crianza</th>
+          <td scope="row">${detalleVino[0].Maturation}</td>
         </tr>
 
         <tr>
-        <th scope="row">Cosecha:${detalleVino[0].Harvest}</th>
-        <td></td>
-      </tr>
+          <th scope="row">Cosecha</th>
+          <td scope="row"> ${detalleVino[0].Harvest}</td>
+        </tr>
+
       </tbody>
-    </table>
     </table>
   </div>
   </div>
@@ -81,7 +81,8 @@ function displayDetalle(id) {
     allWines.innerHTML = ""
     vinosContainer.style.display = "none";
     allWines.style.display = "none"
-    history.innerHTML = ""  
+    history.innerHTML = "" 
+    window.history.replaceState(null, null, window.location.origin + "/index.html?time=detalles"); 
 }
 
 
