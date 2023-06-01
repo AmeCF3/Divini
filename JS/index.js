@@ -6,6 +6,7 @@ let vinosContainer = document.getElementById("vinos-container")
 let allWines = document.getElementById("allWines")
 let cardsShop = document.getElementsByClassName("card-container-general1")
 let history =document.getElementById("history")
+let positionName = document.getElementById("allWines")
 
 var buttonNav = [];
 let dataVinos = [];
@@ -164,7 +165,7 @@ function print(vinosArray) {
         console.error("eventosArray no es un array válido:", vinosArray);
     }
 
-    document.getElementById("tarjetas").innerHTML = allWines;
+    document.getElementById("tarjetas").appendChild(allWines);
     var botones = document.querySelectorAll(".button_index1")
     console.log(botones)
     for (var i = 0; i < botones.length; i++) {
@@ -412,7 +413,6 @@ function actionCellers(event) {
 // FUNCION PARA NUESTRA HISTORIA 
 function printHistory() {
     history.innerHTML =
-
         `<div class="history">
             <div class="container-name-history-title">
                 <h1>Nuestra Historia</h1>
@@ -437,7 +437,6 @@ function printHistory() {
                     perfecta
                     entre tradición y modernidad, reflejando el carácter único de la región y la pasión de nuestros
                     enólogos.<br>
-
                     Además de ofrecerles una cuidadosa selección de vinos, también les invitamos a descubrir nuestras
                     bodegas a través de nuestros apasionantes tours. Durante estas visitas, tendrán la oportunidad de
                     sumergirse en el fascinante proceso de elaboración del vino, desde la vendimia hasta la degustación
