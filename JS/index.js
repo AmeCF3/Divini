@@ -208,10 +208,6 @@ function print(vinosArray) {
     }
 }
 
-
-
-
-
 // FUNCIÓN IMPRIMIR FORMULARIO
 function printForm() {
     form.innerHTML = `
