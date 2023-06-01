@@ -176,8 +176,7 @@ p {
     padding: 20px 100px 20px 20px;
 }
 
-.dropdown-item:hover {
-    background-color: #5e7094;
+
 .dropdown-item:hover {
     background-color: #5e7094;
 }
@@ -203,7 +202,6 @@ p {
 
 /* EFECTO EN BOLSA DE COMPRAS */
 .hvr-grow2 {
-.hvr-grow2 {
     vertical-align: middle;
     transform: translateZ(0);
     backface-visibility: hidden;
@@ -214,7 +212,7 @@ p {
 
 .hvr-grow2:hover,
 .hvr-grow2:focus,
-.hvr-grow2:active {
+.hvr-grow2:active,
 .hvr-grow2:hover,
 .hvr-grow2:focus,
 .hvr-grow2:active {
@@ -239,14 +237,13 @@ p {
 /* CONTENEDOR VIDEO */
 
 .inicio {
-.inicio {
     display: block;
     width: 100%;
     height: 100%;
 }
 
 /* VIDEO */
-video {
+.video {
     position: absolute;
     min-width: 100%;
     height: 80%;
@@ -298,7 +295,7 @@ video {
     .menu-links {
         justify-content: space-evenly;
     }
- }
+}
 
 
 
@@ -307,7 +304,7 @@ video {
     .menu-links {
         justify-content: space-evenly;
     }
- }
+}
 
 
 @media (max-width: 800px) {
