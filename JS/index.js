@@ -5,7 +5,7 @@ let bodegas = document.getElementById("info-cellers");
 let vinosContainer = document.getElementById("vinos-container");
 let allWines = document.getElementById("allWines");
 let cardsShop = document.getElementsByClassName("card-container-general1");
-let historyElement = document.getElementById("history");
+let history = document.getElementById("history");
 let positionName = document.getElementById("position-name");
 let tarjetas = document.getElementById("tarjetas");
 
@@ -16,20 +16,20 @@ let dataVinos = [];
 const coleccionVinos = firebase.firestore().collection("BBDD");
 
 function getDataVinos() {
-  coleccionVinos
-    .get()
-    .then((results) => {
-      dataVinos = results.docs
-        .filter((doc) => doc.data().Category === "vinos")
-        .map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-      console.log(dataVinos);
-    })
-    .catch((error) => {
-      console.error("Error al obtener los datos:", error);
-    });
+    coleccionVinos
+        .get()
+        .then((results) => {
+            dataVinos = results.docs
+                .filter((doc) => doc.data().Category === "vinos")
+                .map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+            console.log(dataVinos);
+        })
+        .catch((error) => {
+            console.error("Error al obtener los datos:", error);
+        });
 }
 
 // Llamar a la función para obtener los vinos automáticamente
@@ -38,134 +38,138 @@ getDataVinos();
 //FUNCIÓN PARA CAMBIAR DE PÁGINA
 
 for (var i = 0; i < selectNav.length; i++) {
-  const element = selectNav[i];
-  buttonNav.push(selectNav[i].innerText);
-  element.addEventListener("click", function (e) {
-    imprimir(e.target.id);
-  });
+    const element = selectNav[i];
+    buttonNav.push(selectNav[i].innerText);
+    element.addEventListener("click", function (e) {
+        imprimir(e.target.id);
+    });
 }
 
 function imprimir(id) {
-  let redWines;
-  let whiteWines;
+    let redWines;
+    let whiteWines;
 
-  switch (id) {
-    case "about":
-      video.style.display = "none";
-      form.innerHTML = "";
-      bodegas.innerHTML = "";
-      vinosContainer.style.display = "none";
-      allWines.style.display = "none";
-      historyElement.innerHTML = "";
-      tarjetas.style.display = "none";
-      window.history.replaceState(
-        null,
-        null,
-        window.location.origin + "/index.html?time=nuestra-historia"
-      );
-      apagardetalles();
-      printHistory();
-      break;
-    case "cellars":
-      video.style.display = "none";
-      form.innerHTML = "";
-      vinosContainer.style.display = "none";
-      allWines.style.display = "none";
-      historyElement.innerHTML = "";
-      tarjetas.style.display = "none";
-      window.history.replaceState(
-        null,
-        null,
-        window.location.origin + "/index.html?time=bodegas"
-      );
-      apagardetalles();
-      printCellers();
-      break;
-    case "shop":
-      video.style.display = "none";
-      form.innerHTML = "";
-      bodegas.innerHTML = "";
-      vinosContainer.style.display = "block";
-      positionName.innerHTML = "Todos nuestros vinos";
-      allWines.style.display = "flex";
-      historyElement.innerHTML = "";
-      tarjetas.style.display = "none";
-      window.history.replaceState(
-        null,
-        null,
-        window.location.origin + "/index.html?time=shop"
-      );
-      apagardetalles();
-      print(dataVinos);
-      break;
-    case "red-wine":
-      video.style.display = "none";
-      form.innerHTML = "";
-      bodegas.innerHTML = "";
-      vinosContainer.style.display = "block";
-      positionName.innerHTML = "Nuestros vinos tintos";
-      historyElement.innerHTML = "";
-      allWines.style.display = "flex";
-      tarjetas.style.display = "none";
-      window.history.replaceState(
-        null,
-        null,
-        window.location.origin + "/index.html?time=shop/vinos-rojos"
-      );
-      redWines = dataVinos.filter(
-        (vino) => vino.Variety === "Cabernet Sauvignon" || vino.Variety === "Malbec"
-      );
-      apagardetalles();
-      print(redWines);
-      break;
-    case "white-wine":
-      video.style.display = "none";
-      form.innerHTML = "";
-      bodegas.innerHTML = "";
-      vinosContainer.style.display = "block";
-      positionName.innerHTML = "Nuestros vinos blancos";
-      historyElement.innerHTML = "";
-      allWines.style.display = "flex";
-      tarjetas.style.display = "none";
-      window.history.replaceState(
-        null,
-        null,
-        window.location.origin + "/index.html?time=shop/vinos-blancos"
-      );
-      apagardetalles();
-      whiteWines = dataVinos.filter((vino) => vino.Variety === "Chardonnay");
-      print(whiteWines);
-      break;
-    case "contact":
-      video.style.display = "none";
-      bodegas.innerHTML = "";
-      allWines.style.display = "none";
-      vinosContainer.style.display = "none";
-      historyElement.innerHTML = "";
-      tarjetas.style.display = "none";
-      window.history.replaceState(
-        null,
-        null,
-        window.location.origin + "/index.html?time=contact"
-      );
-      apagardetalles();
-      printForm();
-      break;
-    default:
-      form.innerHTML = "";
-      bodegas.innerHTML = "";
-      allWines.innerHTML = "";
-      vinosContainer.style.display = "block";
-      allWines.style.display = "flex";
-      historyElement.innerHTML = "";
-      video.style.display = "block";
-      positionName.innerHTML = "Nuestros más económicos";
-      tarjetas.style.display = "none";
-      apagardetalles();
-      const vinosFiltrados = dataVinos.filter((vino) => vino.Price <= 1500);
-      print(vinosFiltrados);
-      break;
-  }
+    switch (id) {
+        case "about":
+            printHistory();
+            video.style.display = "none";
+            form.innerHTML = "";
+            bodegas.innerHTML = "";
+            vinosContainer.style.display = "none";
+            allWines.style.display = "none";
+            tarjetas.style.display = "none";
+            window.history.replaceState(
+                null,
+                null,
+                window.location.origin + "/index.html?time=nuestra-historia"
+            );
+            apagardetalles();
+            break;
+        case "cellars":
+            video.style.display = "none";
+            form.innerHTML = "";
+            vinosContainer.style.display = "none";
+            allWines.style.display = "none";
+            history.innerHTML = "";
+            tarjetas.style.display = "none";
+            window.history.replaceState(
+                null,
+                null,
+                window.location.origin + "/index.html?time=bodegas"
+            );
+            apagardetalles();
+            printCellers();
+            break;
+        case "shop":
+            video.style.display = "none";
+            form.innerHTML = "";
+            bodegas.innerHTML = "";
+            vinosContainer.style.display = "block";
+            positionName.innerHTML = "Todos nuestros vinos";
+            allWines.style.display = "flex";
+            history.innerHTML = "";
+            tarjetas.style.display = "none";
+            window.history.replaceState(
+                null,
+                null,
+                window.location.origin + "/index.html?time=shop"
+            );
+            apagardetalles();
+            print(dataVinos);
+            break;
+        case "red-wine":
+            video.style.display = "none";
+            form.innerHTML = "";
+            bodegas.innerHTML = "";
+            vinosContainer.style.display = "block";
+            positionName.innerHTML = "Nuestros vinos tintos";
+            history.innerHTML = "";
+            allWines.style.display = "flex";
+            tarjetas.style.display = "none";
+            window.history.replaceState(
+                null,
+                null,
+                window.location.origin + "/index.html?time=shop/vinos-rojos"
+            );
+            redWines = dataVinos.filter(
+                (vino) => vino.Variety === "Cabernet Sauvignon" || vino.Variety === "Malbec"
+            );
+            apagardetalles();
+            print(redWines);
+            break;
+        case "white-wine":
+            video.style.display = "none";
+            form.innerHTML = "";
+            bodegas.innerHTML = "";
+            vinosContainer.style.display = "block";
+            positionName.innerHTML = "Nuestros vinos blancos";
+            history.innerHTML = "";
+            allWines.style.display = "flex";
+            tarjetas.style.display = "none";
+            window.history.replaceState(
+                null,
+                null,
+                window.location.origin + "/index.html?time=shop/vinos-blancos"
+            );
+            apagardetalles();
+            whiteWines = dataVinos.filter((vino) => vino.Variety === "Chardonnay");
+            print(whiteWines);
+            break;
+        case "contact":
+            video.style.display = "none";
+            bodegas.innerHTML = "";
+            allWines.style.display = "none";
+            vinosContainer.style.display = "none";
+            history.innerHTML = "";
+            tarjetas.style.display = "none";
+            window.history.replaceState(
+                null,
+                null,
+                window.location.origin + "/index.html?time=contact"
+            );
+            apagardetalles();
+            printForm();
+            break;
+        default:
+            form.innerHTML = "";
+            bodegas.innerHTML = "";
+            allWines.innerHTML = "";
+            vinosContainer.style.display = "block";
+            allWines.style.display = "flex";
+            history.innerHTML = "";
+            video.style.display = "block";
+            positionName.innerHTML = "Nuestros más económicos";
+            tarjetas.style.display = "none";
+            window.history.replaceState(
+                null,
+                null,
+                window.location.origin + "/index.html?time=home"
+            );
+            apagardetalles();
+            const vinosFiltrados = dataVinos.filter((vino) => vino.Price <= 1500);
+            print(vinosFiltrados);
+            break;
+    }
 }
 
 // FUNCION PARA PINTAR LAS TARJETAS 
