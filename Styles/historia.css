@@ -1,6 +1,6 @@
 .history{
     width: 100vw;
-    height: 100vh;
+    height: auto
     /* background-color:  rgb(22, 117, 3) ; */
   }
   
@@ -23,7 +23,7 @@
     align-items: flex-end;
     justify-content: center;
     border-bottom: 1px solid #b9921d;
-    padding: 30px 60px 40px;
+    padding: 30px 60px 20px;
   }
   
   .container-name-history h3 {
@@ -32,6 +32,112 @@
     font-weight: 300;
     font-size: 3vh;
   }
+
+
+  .galeria { 
+    height: auto;
+    font-family: 'open sans'; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    background-color: #f3f3f3;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+} 
+ 
+.galeria h1 { 
+    text-align: center; 
+    margin: 20px 0 15px 0; 
+    font-weight: 300; 
+    color:#b9921d; 
+} 
+ 
+.contenedor-galeria { 
+    display: flex; 
+    width: 80%; 
+    margin: auto; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    border-radius: 3px;
+    gap: 25px 
+} 
+ 
+.contenedor-galeria .imagen-divini { 
+    width: 30%; 
+    position: relative; 
+    height: 250px; 
+    margin-bottom: 5px; 
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75) 
+} 
+ 
+.imagen-divini img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+} 
+ 
+.overlay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    background: rgba(107, 149, 175, 0.781); 
+    width: 100%; 
+    height: 0; 
+    overflow: hidden; 
+    transition: .5s ease; 
+     
+} 
+ 
+.arte-vino{ 
+    color:  #7585a7; 
+    font-size: 17px; 
+} 
+.overlay h2 { 
+    color: #f5d062; 
+    font-weight: 300; 
+    font-size: 23px; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    text-align: center; 
+    transform: translate(-50%, -50%); 
+    font-family: 'Poppins', sans-serif; 
+} 
+ 
+.imagen-divini:hover .overlay { 
+    height: 100%; 
+    /* cursor: pointer; */ 
+} 
+ 
+@media screen and (max-width:1000px) { 
+    .contenedor-galeria { 
+        width: 95%; 
+    } 
+} 
+ 
+@media screen and (max-width:700px) { 
+    .contenedor-galeria { 
+        width: 85%; 
+    } 
+ 
+    .contenedor-galeria .imagen-divini { 
+        width: 45%; 
+    } 
+} 
+ 
+@media screen and (max-width:450px) { 
+    h1 { 
+        font-size: 22px; 
+    } 
+ 
+    .contenedor-galeria { 
+        width: 90%; 
+    } 
+ 
+    .contenedor-galeria .imagen-divini { 
+        width: 80%; 
+    } 
+}
   
 
   
