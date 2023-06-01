@@ -56,7 +56,7 @@ function imprimir(id) {
             vinosContainer.style.display = "none";
             allWines.style.display = "none";
             printHistory();
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=nuestra-historia");
             break;          
         case "cellars":
@@ -66,7 +66,7 @@ function imprimir(id) {
             allWines.style.display = "none"
             history.innerHTML = ""
             printCellers();
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=bodegas");
             break;
         case "shop":
@@ -78,7 +78,7 @@ function imprimir(id) {
             allWines.style.display = "flex"
             history.innerHTML = ""
             print(dataVinos);
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop");
             break;
         case "red-wine":
@@ -92,7 +92,7 @@ function imprimir(id) {
             redWines = dataVinos.filter((vino) => vino.Variety === "Cabernet Sauvignon" || vino.Variety === "Malbec");
             print(redWines);
             console.log(redWines);
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-rojos");
             break;
         case "white-wine":
@@ -105,7 +105,7 @@ function imprimir(id) {
             allWines.style.display = "flex"
             whiteWines = dataVinos.filter((vino) => vino.Variety === "Chardonnay");
             print(whiteWines)
-            apagardetalles ();
+            apagardetalles();
             window.history.replaceState(null, null, window.location.origin + "/index.html?time=shop/vinos-blancos");
             break;
         case "contact":
@@ -115,7 +115,7 @@ function imprimir(id) {
             allWines.style.display = "none"
             vinosContainer.style.display = "none";
             history.innerHTML = ""
-
+            apagardetalles();
             printForm();
             break;
         default:
@@ -126,8 +126,7 @@ function imprimir(id) {
             vinosContainer.style.display = "block";
             allWines.style.display = "flex"
             history.innerHTML = ""
-
-
+            apagardetalles();
             video.style.display = "block"
             positionName.innerHTML = "Nuestros más económicos"
             const vinosFiltrados = dataVinos.filter((vino) => vino.Price <= 1500);
@@ -174,12 +173,8 @@ function print(vinosArray) {
             console.log("hice click")
             console.log(e.target.id)
             displayDetalle(e.target.id)
-            
-
         })
     }
- 
-
 }
 
 // FUNCIÓN IMPRIMIR FORMULARIO
@@ -445,6 +440,69 @@ function printHistory() {
                     compartiendo con ustedes su conocimiento y amor por el vino.</h3>
             </div>
          </div>
+
+         <div class="galeria"> 
+        <h1>Nuestro Viñedo</h1> 
+        <p class="arte-vino">Arte y Vino</p> 
+        <div class="linea"></div> 
+        <div class="contenedor-galeria"> 
+            <div class="imagen-divini"> 
+                <img src="multimedia/pexels-pixabay-51947.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2 >Area de siembra</h2> 
+                </div> 
+            </div> 
+            <div class="imagen-divini "> 
+                <img src="multimedia/pexels-grape-things-3842606.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Cosecha</h2> 
+                </div> 
+            </div> 
+            <div class="imagen-divini"> 
+                <img src="multimedia/pexels-mali-maeder-110822.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Recorridos</h2> 
+                </div> 
+            </div> 
+            <div class="imagen-divini"> 
+                <img src="multimedia/pexels-tim-mossholder-2339181.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Viticultura</h2> 
+                </div> 
+            </div> 
+ 
+            <div class="imagen-divini"> 
+                <img src="multimedia/pexels-ilya-st-15786533.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Almacen</h2> 
+                </div> 
+            </div> 
+            <div class="imagen-divini"> 
+                <img src="multimedia/wine-664822_1920.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Produccion de vino</h2> 
+                </div> 
+            </div> 
+            <div class="imagen-divini"> 
+                <img src="multimedia/wine-5461706_1280.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Barricas de vino</h2> 
+                </div> 
+            </div> 
+            <div class="imagen-divini"> 
+                <img src="multimedia/wine-bottles-363214_1920.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Catas de vino en casa</h2> 
+                </div> 
+            </div> 
+            <div class="imagen-divini"> 
+                <img src="multimedia/pexels-taryn-elliott-4099106.jpg" alt=""> 
+                <div class="overlay"> 
+                    <h2>Degustaciones</h2> 
+                </div> 
+            </div> 
+        </div> 
+    </div>
     `
 }
 
