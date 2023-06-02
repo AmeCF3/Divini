@@ -8,6 +8,7 @@ let cardsShop = document.getElementsByClassName("card-container-general1");
 let history = document.getElementById("history");
 let positionName = document.getElementById("position-name");
 let tarjetas = document.getElementById("tarjetas");
+let arrayAFiltrar;
 
 var buttonNav = [];
 let dataVinos = [];
@@ -17,19 +18,20 @@ const coleccionVinos = firebase.firestore().collection("BBDD");
 
 async function getDataVinos() {
     try {
-      const results = await coleccionVinos.get();
-      dataVinos = results.docs
-        .filter((doc) => doc.data().Category === "vinos")
-        .map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-      console.log(dataVinos);
+        const results = await coleccionVinos.get();
+        dataVinos = results.docs
+            .filter((doc) => doc.data().Category === "vinos")
+            .map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+        console.log(dataVinos);
+        arrayAFiltrar = dataVinos
     } catch (error) {
-      console.error("Error al obtener los datos:", error);
+        console.error("Error al obtener los datos:", error);
     }
-  }
-  
+}
+
 
 // Llamar a la función para obtener los vinos automáticamente
 window.addEventListener('load', function () {
@@ -97,6 +99,7 @@ function imprimir(id) {
                 null,
                 window.location.origin + "/index.html?time=shop"
             );
+            arrayAFiltrar = dataVinos
             apagardetalles();
             print(dataVinos);
             break;
@@ -117,6 +120,7 @@ function imprimir(id) {
             redWines = dataVinos.filter(
                 (vino) => vino.Variety === "Cabernet Sauvignon" || vino.Variety === "Malbec"
             );
+            arrayAFiltrar = redWines;
             apagardetalles();
             print(redWines);
             break;
@@ -136,6 +140,7 @@ function imprimir(id) {
             );
             apagardetalles();
             whiteWines = dataVinos.filter((vino) => vino.Variety === "Chardonnay");
+            arrayAFiltrar = whiteWines;
             print(whiteWines);
             break;
         case "contact":
@@ -170,7 +175,8 @@ function imprimir(id) {
             );
             apagardetalles();
             const vinosFiltrados = dataVinos.filter((vino) => vino.Price <= 1500);
-            print(vinosFiltrados);
+            arrayAFiltrar = vinosFiltrados
+            print(arrayAFiltrar);
             break;
     }
 }
@@ -538,7 +544,7 @@ var inputSearch = document.getElementById("buscador");
 inputSearch.addEventListener("keyup", function (event) {
     var datoInput = event.target.value;
     var datosOrdenados = datoInput.trim().toLowerCase();
-    var filtrado = dataVinos.filter(vino => vino.Name.toLowerCase().includes(datosOrdenados));
+    var filtrado = arrayAFiltrar.filter(vino => vino.Name.toLowerCase().includes(datosOrdenados));
 
     if (filtrado.length === 0) {
         // No se encontraron resultados
